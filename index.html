@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="dark"><head>
+<html lang="ko" data-theme="light"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>김민균 — AI 활용 풀스택 개발자</title>
-<meta name="description" content="김민균 포트폴리오. AI 활용 풀스택 개발자. FROKY VAPE, B.A.I.S 야구 AI 해설, Jarvis Lite Pro 등 실서비스·AI 프로젝트. Python, Next.js, FastAPI, Claude API.">
+<meta name="description" content="김민균 포트폴리오. AI 활용 풀스택 개발자. AI Visibility Check(원티드 AI Championship 2026 출품), FROKY VAPE, B.A.I.S 야구 AI 해설, Jarvis Lite Pro 등 실서비스·AI 프로젝트. Python, Next.js, FastAPI, Claude API.">
 <meta name="author" content="김민균">
 <meta property="og:title" content="김민균 — AI 활용 풀스택 개발자">
 <meta property="og:description" content="아이디어를 실제 운영되는 제품으로 빠르게 만들어 배포하는 풀스택 개발자.">
@@ -290,123 +290,164 @@
 @font-face{font-family:Pretendard;font-weight:900;font-display:swap;src:local('Pretendard Black'),url("assets/9e1bcf39.woff2") format('woff2')}@font-face{font-family:Pretendard;font-weight:800;font-display:swap;src:local('Pretendard ExtraBold'),url("assets/0fe0b7e4.woff2") format('woff2')}@font-face{font-family:Pretendard;font-weight:700;font-display:swap;src:local('Pretendard Bold'),url("assets/2a78a1e5.woff2") format('woff2')}@font-face{font-family:Pretendard;font-weight:600;font-display:swap;src:local('Pretendard SemiBold'),url("assets/209affb5.woff2") format('woff2')}@font-face{font-family:Pretendard;font-weight:500;font-display:swap;src:local('Pretendard Medium'),url("assets/52f75eaf.woff2") format('woff2')}@font-face{font-family:Pretendard;font-weight:400;font-display:swap;src:local('Pretendard Regular'),url("assets/89f9846a.woff2") format('woff2')}
 /*# sourceMappingURL=/sm/51b565c04cae0bb1ce2c86cd5d1809aca984a92cb3f8e3efe91c4d2950752c00.map */</style>
 <style>
+  /* ===== 토큰: 밝은 화면 기본, 흑백 + 파란 포인트 ===== */
   :root{
-    --bg:#0a0d12; --surface:#11161d; --surface2:#161d27;
-    --border:#1d2530; --border2:#2a3543; --text:#e8eef5; --text2:#aeb9c6; --muted:#69757f;
-    --accent:#34d399;
+    --bg:#fafafa; --surface:#ffffff; --surface2:#f4f4f5;
+    --border:#e4e4e7; --border2:#d4d4d8; --text:#09090b; --text2:#3f3f46; --muted:#71717a;
+    --accent:#2563eb; --on-accent:#ffffff; --accent-soft:#eff4ff; --r:8px;
   }
-  :root[data-theme="light"]{
-    --bg:#f4f6f9; --surface:#ffffff; --surface2:#f1f4f8;
-    --border:#e4e9f0; --border2:#d2dae4; --text:#0f151c; --text2:#465160; --muted:#7c8794;
-    --accent:#0a9d6e;
+  :root[data-theme="dark"]{
+    --bg:#09090b; --surface:#111114; --surface2:#18181b;
+    --border:#27272a; --border2:#3f3f46; --text:#fafafa; --text2:#d4d4d8; --muted:#a1a1aa;
+    --accent:#60a5fa; --on-accent:#09090b; --accent-soft:#0f1b33;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:'Pretendard','JetBrains Mono',sans-serif;-webkit-font-smoothing:antialiased;transition:background .35s,color .35s;}
-  ::selection{background:var(--accent);color:#06140e;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Pretendard',system-ui,sans-serif;font-size:16px;word-break:keep-all;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s;}
+  ::selection{background:var(--accent);color:var(--on-accent);}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
   a{color:inherit;}
   h1,h2,h3,p{margin:0;}
-  .mono{font-family:'JetBrains Mono',monospace;}
-  .wrap{max-width:1100px;margin:0 auto;padding:0 clamp(18px,4vw,40px);}
-  .grid-bg{position:fixed;inset:0;pointer-events:none;z-index:0;background-image:radial-gradient(var(--border) 1px,transparent 1px);background-size:32px 32px;opacity:.35;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);}
-  header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid var(--border);}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(18px,4vw,40px);max-width:1100px;margin:0 auto;}
-  .logo{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15px;}
-  .logo span.badge{display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border-radius:7px;background:var(--accent);color:#06140e;font-weight:800;}
-  nav.links{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end;font-size:13px;font-weight:500;}
-  nav.links a{text-decoration:none;color:var(--text2);padding:7px 11px;border-radius:7px;transition:color .2s,background .2s;}
-  nav.links a:hover{color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent);}
-  #theme{margin-left:6px;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid var(--border2);background:var(--surface);color:var(--text);cursor:pointer;}
-  #theme:hover{border-color:var(--accent);color:var(--accent);}
+  /* 한글은 고정폭 글꼴이 없으므로 Pretendard 로 떨어지게 한다 */
+  .mono{font-family:'JetBrains Mono','Pretendard',monospace;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,40px);}
+  .grid-bg{display:none;}
   main{position:relative;z-index:1;}
-  .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border-radius:9px;font-weight:600;font-size:14px;text-decoration:none;transition:transform .18s,box-shadow .25s,border-color .2s,color .2s;}
-  .btn-primary{background:var(--accent);color:#06140e;font-weight:700;border:1px solid transparent;}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px -8px color-mix(in srgb,var(--accent) 60%,transparent);}
+
+  /* ===== 헤더 ===== */
+  header.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px clamp(16px,4vw,40px);max-width:1120px;margin:0 auto;}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:16px;flex:0 0 auto;}
+  .logo span{white-space:nowrap;}
+  .logo span.badge{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:6px;background:var(--text);color:var(--bg);font-size:14px;}
+  nav.links{display:flex;align-items:center;gap:2px;font-size:14px;font-weight:600;}
+  nav.links a{text-decoration:none;color:var(--text2);padding:8px 12px;border-radius:6px;white-space:nowrap;transition:color .2s,background .2s;}
+  nav.links a:hover{color:var(--text);background:var(--surface2);}
+  nav.links a.nav-cta{margin-left:6px;background:var(--text);color:var(--bg);}
+  nav.links a.nav-cta:hover{background:var(--accent);color:var(--on-accent);}
+  #theme{margin-left:6px;flex:0 0 auto;display:inline-grid;place-items:center;width:36px;height:36px;border-radius:6px;border:1px solid var(--border2);background:var(--surface);color:var(--text);cursor:pointer;}
+  #theme:hover{border-color:var(--text);}
+
+  /* ===== 버튼 ===== */
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border-radius:var(--r);font-weight:700;font-size:15px;text-decoration:none;transition:background .2s,border-color .2s,color .2s;}
+  .btn-primary{background:var(--accent);color:var(--on-accent);border:1px solid var(--accent);}
+  .btn-primary:hover{background:var(--text);border-color:var(--text);color:var(--bg);}
   .btn-ghost{background:var(--surface);color:var(--text);border:1px solid var(--border2);}
-  .btn-ghost:hover{transform:translateY(-2px);color:var(--accent);border-color:var(--accent);}
-  .hero{padding:clamp(56px,9vw,108px) 0 clamp(48px,7vw,80px);display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:clamp(36px,5vw,64px);align-items:center;}
-  .sec{padding:clamp(32px,5vw,52px) 0;scroll-margin-top:88px;}
-  .sec-head{display:flex;align-items:center;gap:16px;margin-bottom:30px;}
-  .sec-head .num{font-size:13px;font-weight:700;color:var(--accent);}
-  .sec-head h2{font-size:clamp(1.3rem,3vw,1.7rem);font-weight:800;letter-spacing:-.01em;}
-  .sec-head .en{font-size:.62em;font-weight:500;color:var(--muted);}
-  .sec-head .line{flex:1;height:1px;background:var(--border);}
-  .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;}
-  .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:14px;}
-  .skill{display:flex;align-items:center;gap:14px;padding:18px 16px;border-radius:12px;background:var(--surface);border:1px solid var(--border);transition:transform .2s,border-color .2s;}
-  .skill:hover{transform:translateY(-3px);border-color:var(--border2);}
-  .skill .nm{font-weight:700;font-size:15px;}
-  .skill .tg{font-size:11px;color:var(--muted);margin-top:2px;}
-  .cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:18px;}
-  .cat{padding:18px 20px;border-radius:12px;background:var(--surface);border:1px solid var(--border);}
-  .cat h3{font-size:11px;font-weight:700;color:var(--accent);margin-bottom:11px;}
-  .tags{display:flex;flex-wrap:wrap;gap:7px;}
-  .tag{font-size:12px;padding:4px 10px;border-radius:6px;color:var(--text2);background:var(--surface2);border:1px solid var(--border);}
-  .projects{display:flex;flex-direction:column;gap:18px;}
-  .proj{position:relative;padding:clamp(22px,3.4vw,34px);border-radius:14px;background:var(--surface);border:1px solid var(--border);transition:transform .25s,border-color .25s,box-shadow .3s;overflow:hidden;}
-  .proj:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 24px 50px -28px color-mix(in srgb,var(--accent) 50%,transparent);}
-  .proj .idx{position:absolute;top:18px;right:24px;font-weight:800;font-size:clamp(2.4rem,6vw,3.4rem);color:var(--border);line-height:1;}
-  .proj h3{font-size:clamp(1.15rem,2.6vw,1.5rem);font-weight:800;letter-spacing:-.01em;}
-  .proj .head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px;}
-  .pill{font-size:11px;font-weight:700;color:var(--muted);padding:4px 9px;border-radius:20px;border:1px solid var(--border2);}
-  .pill.live{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 30%,transparent);background:color-mix(in srgb,var(--accent) 12%,transparent);display:inline-flex;align-items:center;gap:6px;}
-  .pill.live i{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);}
-  .proj .desc{color:var(--text2);font-size:14.5px;line-height:1.6;max-width:60ch;margin-bottom:20px;}
-  .rows{display:grid;gap:14px;}
-  .row{display:grid;grid-template-columns:minmax(72px,auto) 1fr;gap:14px;align-items:start;}
-  .row .lbl{font-size:11px;font-weight:700;color:var(--accent);padding-top:2px;}
-  .row .val{font-size:14px;color:var(--text);line-height:1.55;}
-  .story{margin-top:6px;padding:16px 18px;border-radius:10px;background:var(--surface2);border:1px solid var(--border);}
-  .story .q{font-size:11px;font-weight:700;color:var(--accent);font-family:'JetBrains Mono',monospace;margin-bottom:4px;}
-  .story p{font-size:13.5px;line-height:1.62;color:var(--text2);}
-  .story p + .q{margin-top:13px;}
-  .story b{color:var(--text);font-weight:700;}
-  .proj .desc.lead{font-size:13.5px;color:var(--muted);margin-bottom:14px;max-width:66ch;}
-  .did{margin:0 0 16px;padding:16px 18px 17px;border-radius:11px;background:color-mix(in srgb,var(--accent) 7%,var(--surface2));border:1px solid color-mix(in srgb,var(--accent) 24%,var(--border));}
-  .did .dl{font-size:11px;font-weight:700;color:var(--accent);font-family:'JetBrains Mono',monospace;letter-spacing:.05em;margin-bottom:11px;display:flex;align-items:center;gap:7px;}
-  .did .dl svg{width:13px;height:13px;}
-  .did ul{margin:0;padding:0;list-style:none;display:grid;gap:9px;}
-  .did li{position:relative;padding-left:21px;font-size:14px;line-height:1.55;color:var(--text);}
-  .did li::before{content:"";position:absolute;left:2px;top:7px;width:6px;height:6px;border-radius:2px;background:var(--accent);}
-  .did li b{color:var(--accent);font-weight:700;}
-  .plan{display:flex;gap:11px;align-items:flex-start;margin:0 0 13px;padding:13px 16px;border-radius:10px;background:var(--surface2);border:1px solid var(--border);border-left:3px solid color-mix(in srgb,var(--accent) 45%,var(--border2));}
-  .plan svg{flex:0 0 auto;width:16px;height:16px;color:var(--accent);margin-top:2px;}
-  .plan .pk{display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;color:var(--accent);letter-spacing:.06em;margin-bottom:4px;}
-  .plan .pt{font-size:13.5px;line-height:1.58;color:var(--text2);}
-  .plan .pt b{color:var(--text);font-weight:700;}
-  .more-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;}
-  .mcard{padding:20px;border-radius:12px;background:var(--surface);border:1px solid var(--border);transition:transform .2s,border-color .2s;}
-  .mcard:hover{transform:translateY(-3px);border-color:var(--accent);}
-  .mcard h3{font-weight:700;font-size:15px;margin-bottom:6px;}
-  .mcard p{font-size:13px;line-height:1.55;color:var(--text2);margin-bottom:12px;}
-  .about-lead{padding:clamp(22px,3.4vw,30px);border-radius:14px;background:var(--surface);border:1px solid var(--border);margin-bottom:14px;}
-  .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;}
-  .ab{padding:22px;border-radius:12px;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--border2);}
-  .ab.acc{border-left-color:var(--accent);}
-  .ab .k{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:8px;}
+  .btn-ghost:hover{border-color:var(--text);}
+
+  /* ===== 히어로 ===== */
+  .hero{padding:clamp(56px,9vw,112px) 0 clamp(44px,6vw,72px);display:grid;gap:clamp(36px,5vw,56px);border-bottom:1px solid var(--border);}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--text2);padding:6px 12px;border:1px solid var(--border2);border-radius:999px;background:var(--surface);}
+  .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#16a34a;box-shadow:0 0 0 3px color-mix(in srgb,#16a34a 22%,transparent);}
+  .hero-title{margin-top:22px;font-size:clamp(2.2rem,5.6vw,4rem);font-weight:800;line-height:1.14;letter-spacing:-.035em;}
+  .hero-title em{font-style:normal;color:var(--accent);}
+  .hero-name{margin-top:24px;font-size:18px;font-weight:700;}
+  .hero-name .mono{margin-left:8px;font-size:13px;font-weight:500;color:var(--muted);letter-spacing:.08em;}
+  .hero-sub{margin-top:10px;max-width:48ch;font-size:clamp(1rem,1.9vw,1.1rem);line-height:1.7;color:var(--text2);}
+  .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;}
+  .stats{margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border2);border-radius:var(--r);overflow:hidden;}
+  .stats>div{padding:22px;background:var(--surface);}
+  .stats dt{font-size:13px;font-weight:600;color:var(--muted);}
+  .stats dd{margin:10px 0 6px;font-size:clamp(2rem,4vw,2.6rem);font-weight:800;letter-spacing:-.03em;line-height:1;}
+  .stats dd small{margin-left:3px;font-size:15px;font-weight:700;letter-spacing:0;color:var(--text2);}
+  .stats dd.note{margin:0;font-size:13px;font-weight:500;letter-spacing:0;line-height:1.4;color:var(--text2);}
+
+  /* ===== 섹션 공통 ===== */
+  .sec{padding:clamp(52px,7vw,88px) 0 0;scroll-margin-top:72px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:28px;padding-bottom:14px;border-bottom:2px solid var(--text);}
+  .sec-head .num{font-size:14px;font-weight:700;color:var(--accent);}
+  .sec-head h2{font-size:clamp(1.6rem,3.6vw,2.2rem);font-weight:800;letter-spacing:-.03em;}
+  .sec-head .en{margin-left:8px;font-size:.5em;font-weight:500;letter-spacing:.02em;color:var(--muted);}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;}
+  .tag{font-size:12.5px;padding:4px 9px;border-radius:5px;color:var(--text2);background:var(--surface2);border:1px solid var(--border);}
+  .pill{font-size:12px;font-weight:700;color:var(--text2);padding:4px 10px;border-radius:999px;border:1px solid var(--border2);background:var(--surface);white-space:nowrap;}
+  .pill.live{display:inline-flex;align-items:center;gap:6px;color:var(--accent);border-color:color-mix(in srgb,var(--accent) 35%,transparent);background:var(--accent-soft);}
+  .pill.live i{width:7px;height:7px;border-radius:50%;background:var(--accent);}
+
+  /* ===== 대회 ===== */
+  .comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+  .comp{display:flex;flex-direction:column;gap:10px;padding:26px;border-radius:var(--r);background:var(--surface);border:1px solid var(--border2);text-decoration:none;transition:border-color .2s;}
+  .comp:hover{border-color:var(--text);}
+  .comp.now{border-color:var(--accent);box-shadow:inset 0 3px 0 var(--accent);}
+  .comp-top{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px;font-weight:700;color:var(--muted);}
+  .comp h3{font-size:clamp(1.15rem,2.4vw,1.4rem);font-weight:800;letter-spacing:-.02em;}
+  .comp p{font-size:15px;line-height:1.65;color:var(--text2);}
+  .comp .comp-proj{color:var(--text);}
+  .comp-more{margin-top:auto;padding-top:6px;font-size:14px;font-weight:700;color:var(--accent);}
+
+  /* ===== 프로젝트 ===== */
+  .projects{display:flex;flex-direction:column;gap:20px;}
+  .proj{position:relative;padding:clamp(22px,3.4vw,36px);border-radius:var(--r);background:var(--surface);border:1px solid var(--border2);scroll-margin-top:80px;transition:border-color .2s;}
+  .proj:hover{border-color:var(--text);}
+  .proj .idx{position:absolute;top:clamp(24px,3.6vw,40px);right:clamp(22px,3.4vw,36px);font-size:14px;font-weight:700;color:var(--muted);line-height:1;}
+  .proj h3{font-size:clamp(1.3rem,2.8vw,1.7rem);font-weight:800;letter-spacing:-.025em;}
+  .proj .head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px;padding-right:36px;}
+  .proj .desc{color:var(--text2);font-size:15.5px;line-height:1.65;max-width:68ch;margin-bottom:18px;}
+  .plan{display:flex;gap:12px;align-items:flex-start;margin:0 0 14px;padding:14px 18px;border-left:3px solid var(--accent);border-radius:0 var(--r) var(--r) 0;background:var(--accent-soft);}
+  .plan svg{flex:0 0 auto;width:17px;height:17px;color:var(--accent);margin-top:3px;}
+  .plan .pk{display:block;font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--accent);margin-bottom:4px;}
+  .plan .pt{font-size:15px;line-height:1.65;color:var(--text2);}
+  .plan .pt b{font-weight:700;color:var(--text);}
+  .did{margin:0 0 18px;padding:18px 20px;border-radius:var(--r);background:var(--surface2);border:1px solid var(--border);}
+  .did .dl{display:flex;align-items:center;gap:7px;margin-bottom:12px;font-size:13px;font-weight:700;color:var(--text);}
+  .did .dl svg{width:14px;height:14px;color:var(--accent);}
+  .did ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;}
+  .did li{position:relative;padding-left:20px;font-size:15px;line-height:1.6;color:var(--text2);}
+  .did li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:1px;background:var(--accent);}
+  .did li b{font-weight:700;color:var(--text);}
+  .rows{display:grid;gap:12px;}
+  .row{display:grid;grid-template-columns:76px 1fr;gap:14px;align-items:start;}
+  .row .lbl{padding-top:3px;font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--muted);}
+  .row .val{font-size:15px;line-height:1.6;color:var(--text);}
+  details.more{border:1px solid var(--border2);border-radius:var(--r);background:var(--surface);}
+  details.more>summary{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;font-size:16px;font-weight:700;cursor:pointer;list-style:none;}
+  details.more>summary::-webkit-details-marker{display:none;}
+  details.more>summary::after{content:"+";font-size:22px;font-weight:500;color:var(--muted);}
+  details.more[open]>summary::after{content:"−";}
+  .more-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;padding:0 24px 24px;}
+  .mcard{padding:18px;border-radius:var(--r);background:var(--surface2);border:1px solid var(--border);}
+  .mcard h3{margin-bottom:6px;font-size:15.5px;font-weight:700;}
+  .mcard p{margin-bottom:12px;font-size:14px;line-height:1.6;color:var(--text2);}
+
+  /* ===== 기술 스택: 4칸 표 ===== */
+  .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border2);border-radius:var(--r);overflow:hidden;}
+  .cat{padding:22px;background:var(--surface);}
+  .cat h3{margin-bottom:12px;font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--muted);}
+
+  /* ===== 경력 · 연락 ===== */
+  .about-lead{padding:clamp(22px,3.4vw,32px);border-radius:var(--r);background:var(--surface);border:1px solid var(--border2);margin-bottom:16px;}
+  .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;}
+  .ab{padding:22px;border-radius:var(--r);background:var(--surface);border:1px solid var(--border2);}
+  .ab.acc{box-shadow:inset 0 3px 0 var(--accent);}
+  .ab .k{margin-bottom:8px;font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--muted);}
   .ab.acc .k{color:var(--accent);}
-  .ab .t{font-weight:700;font-size:16px;margin-bottom:6px;}
-  .ab p{font-size:13.5px;line-height:1.6;color:var(--text2);}
-  .contact{padding:clamp(48px,7vw,90px) 0 clamp(56px,8vw,100px);scroll-margin-top:88px;}
-  .contact .box{border-radius:18px;background:var(--surface);border:1px solid var(--border);padding:clamp(32px,5vw,56px);text-align:center;}
-  .contact h2{font-size:clamp(1.7rem,5vw,2.8rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-bottom:14px;}
-  .js .reveal:not(.shown){opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1);}
+  .ab .t{margin-bottom:6px;font-size:17px;font-weight:700;}
+  .ab p{font-size:14.5px;line-height:1.65;color:var(--text2);}
+  .ab p b{color:var(--text);}
+  .contact{padding:clamp(56px,8vw,100px) 0;scroll-margin-top:72px;}
+  .contact .box{padding:clamp(36px,6vw,64px);border-radius:var(--r);background:var(--text);color:var(--bg);text-align:center;}
+  .contact h2{margin-bottom:14px;font-size:clamp(1.8rem,5vw,3rem);font-weight:800;letter-spacing:-.035em;line-height:1.15;}
+  .contact .box p{color:color-mix(in srgb,var(--bg) 72%,var(--text)) !important;}
+  .contact .btn-ghost{background:transparent;color:var(--bg);border-color:color-mix(in srgb,var(--bg) 40%,transparent);}
+  .contact .btn-ghost:hover{border-color:var(--bg);}
+
+  /* ===== 등장 애니메이션 ===== */
+  .js .reveal:not(.shown){opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.22,.61,.36,1),transform .6s cubic-bezier(.22,.61,.36,1);}
   .reveal.shown{opacity:1;transform:none;}
-  @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+
   /* ===== 이력서 모달 ===== */
-  #resume-modal{position:fixed;inset:0;z-index:200;display:none;background:rgba(5,8,12,.72);backdrop-filter:blur(5px);overflow:auto;padding:36px 14px 60px;}
+  #resume-modal{position:fixed;inset:0;z-index:200;display:none;background:rgba(9,9,11,.72);backdrop-filter:blur(5px);overflow:auto;padding:36px 14px 60px;}
   #resume-modal.show{display:block;}
   .rsm-bar{max-width:210mm;margin:0 auto 12px;display:flex;justify-content:flex-end;gap:10px;}
-  .rsm-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 16px;border-radius:9px;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;cursor:pointer;border:1px solid;}
-  .rsm-btn.p{background:#0a9d6e;color:#fff;border-color:#0a9d6e;}
+  .rsm-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 16px;border-radius:8px;font-family:'Pretendard',sans-serif;font-weight:700;font-size:14px;cursor:pointer;border:1px solid;}
+  .rsm-btn.p{background:#2563eb;color:#fff;border-color:#2563eb;}
   .rsm-btn.g{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.3);}
-  .rsm-sheet{max-width:210mm;margin:0 auto;background:#fff;color:#13181f;border-radius:10px;padding:42px 46px;font-family:'Pretendard','JetBrains Mono',sans-serif;box-shadow:0 30px 80px -20px rgba(0,0,0,.6);line-height:1.5;}
-  .rsm-sheet .mono{font-family:'JetBrains Mono',monospace;}
-  .rsm-h{margin:24px 0 12px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:800;color:#13181f;display:flex;align-items:center;gap:10px;}
+  .rsm-sheet{max-width:210mm;margin:0 auto;background:#fff;color:#13181f;border-radius:8px;padding:42px 46px;font-family:'Pretendard',sans-serif;box-shadow:0 30px 80px -20px rgba(0,0,0,.6);line-height:1.5;}
+  .rsm-h{margin:24px 0 12px;font-size:14px;font-weight:800;color:#13181f;display:flex;align-items:center;gap:10px;}
   .rsm-h .ln{flex:1;height:1px;background:#e1e7ee;}
-  .rsm-h .hash{color:#0a9d6e;}
+  .rsm-h .hash{color:#2563eb;}
   .rsm-row{display:grid;grid-template-columns:128px 1fr;gap:14px;font-size:13px;line-height:1.5;margin-bottom:9px;}
-  .rsm-row .dt{font-family:'JetBrains Mono',monospace;font-size:11px;color:#4f5b68;}
+  .rsm-row .dt{font-family:'JetBrains Mono','Pretendard',monospace;font-size:11px;color:#4f5b68;}
   @media print{
     body>*:not(#resume-modal){display:none !important;}
     #resume-modal{position:static;display:block !important;background:#fff;padding:0;overflow:visible;backdrop-filter:none;}
@@ -414,29 +455,27 @@
     .rsm-sheet{box-shadow:none;border-radius:0;max-width:none;margin:0;padding:14mm 16mm;}
     @page{size:A4;margin:0;}
   }
-  .cursor{display:inline-block;width:9px;height:18px;background:var(--accent);vertical-align:-3px;margin-left:3px;animation:blink 1.1s step-end infinite;}
-  /* ===== 모바일 헤더 (<=640px) =====
-     로고가 눌려 세로로 쪼개지고 메뉴가 여러 줄로 흩어지는 문제.
-     로고는 축소 금지, 메뉴는 한 줄 가로 스크롤, 테마 버튼은 우측 고정. */
-  @media (max-width:640px){
-    .nav-inner{gap:10px;padding:10px 16px;}
-    .logo{flex:0 0 auto;}
-    .logo span{white-space:nowrap;}
-    nav.links{
-      flex:1 1 auto;min-width:0;
-      flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;
-      justify-content:flex-start;
-      scrollbar-width:none;-ms-overflow-style:none;
-    }
-    nav.links::-webkit-scrollbar{display:none;}
-    nav.links a{flex:0 0 auto;padding:7px 9px;}
-    #theme{
-      position:sticky;right:0;flex:0 0 auto;margin-left:2px;
-      width:32px;height:32px;
-      background:var(--bg);
-    }
+  #lightbox.on{display:flex !important;}
+
+  /* ===== 반응형 ===== */
+  @media (max-width:860px){
+    .stats{grid-template-columns:repeat(2,1fr);}
+    .cat-grid{grid-template-columns:repeat(2,1fr);}
   }
-  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;}html{scroll-behavior:auto;}}  #lightbox.on{display:flex !important;}
+  @media (max-width:640px){
+    .nav-inner{padding:10px 16px;gap:8px;}
+    .hide-sm{display:none;}
+    nav.links a{padding:7px 9px;}
+    #theme{width:34px;height:34px;margin-left:2px;}
+    .row{grid-template-columns:1fr;gap:6px;}
+    .more-grid{padding:0 16px 16px;}
+    details.more>summary{padding:18px 16px;}
+  }
+  @media (max-width:520px){
+    .cat-grid{grid-template-columns:1fr;}
+    .logo span:not(.badge){display:none;}
+  }
+  @media (prefers-reduced-motion:reduce){.js .reveal:not(.shown),.reveal{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
 </style>
 </head>
 <body>
@@ -446,13 +485,13 @@
 <header class="nav">
   <div class="nav-inner">
     <a class="logo mono" href="#top"><span class="badge">M</span><span>김민균</span></a>
-    <nav class="links mono">
-      <a href="#stack">stack</a>
-      <a href="#work">work</a>
-      <a href="#bootcamp">bootcamp</a>
-      <a href="#principles">principles</a>
-      <a href="#about">about</a>
-      <a href="#contact">contact</a>
+    <nav class="links">
+      <a href="#competitions">대회</a>
+      <a href="#work">프로젝트</a>
+      <a class="hide-sm" href="#stack">기술</a>
+      <a href="#about">경력</a>
+      <a class="hide-sm" href="#contact">연락</a>
+      <a class="nav-cta" href="#resume" onclick="openResume(event)">이력서</a>
       <button id="theme" aria-label="테마 전환">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
       </button>
@@ -466,10 +505,11 @@
   <!-- HERO -->
   <section class="hero">
     <div class="reveal">
-      <h1 style="font-weight:800;font-size:clamp(2.5rem,6.4vw,4.4rem);line-height:1.02;letter-spacing:-.02em;">김민균<span class="mono" style="display:block;font-size:clamp(.95rem,2.2vw,1.25rem);font-weight:500;color:var(--muted);letter-spacing:.04em;margin-top:14px;">KIM&nbsp;MINGYUN</span></h1>
-      <p class="mono" style="font-weight:600;font-size:clamp(1.05rem,2.6vw,1.5rem);color:var(--accent);margin-top:22px;letter-spacing:-.01em;">AI 활용 풀스택 개발자 <span style="color:var(--muted);font-weight:500;font-size:.78em">/ AI-Powered Full-Stack Developer</span></p>
-      <p style="margin-top:20px;max-width:46ch;font-size:clamp(1rem,2vw,1.12rem);line-height:1.7;color:var(--text2);">아이디어를 <strong style="color:var(--text);font-weight:700;">실제 운영되는 제품</strong>으로 빠르게 만들어 배포합니다. 단일 HTML 풀스택부터 AI 연동 플랫폼까지 — 직접 기획하고 만들고 띄웁니다.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;">
+      <p class="eyebrow"><span class="dot"></span>구직 중 · AI 활용 풀스택 개발자</p>
+      <h1 class="hero-title">아이디어를<br><em>실제로 운영되는 제품</em>으로<br>만듭니다.</h1>
+      <p class="hero-name">김민균 <span class="mono">KIM MINGYUN</span></p>
+      <p class="hero-sub">단일 HTML 풀스택부터 AI 연동 플랫폼까지 직접 기획하고, 만들고, 배포하고, 운영합니다. 2026년에는 AI 개발 대회 두 곳에 출전했습니다.</p>
+      <div class="cta">
         <a class="btn btn-primary" href="#resume" onclick="openResume(event)">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h4"></path></svg>
           이력서 보기
@@ -484,51 +524,72 @@
         </a>
       </div>
     </div>
-    <div class="reveal" style="transition-delay:.12s;border-radius:14px;background:#0d1117;border:1px solid #1f2832;box-shadow:0 30px 60px -28px rgba(0,0,0,.6);overflow:hidden;">
-      <div style="display:flex;align-items:center;gap:8px;padding:13px 16px;border-bottom:1px solid #1f2832;background:#11161d;">
-        <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;"></span>
-        <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;"></span>
-        <span style="width:11px;height:11px;border-radius:50%;background:#28c840;"></span>
-        <span class="mono" style="margin-left:8px;font-size:12px;color:#69757f;">developer.ts</span>
-      </div>
-      <pre class="mono" style="margin:0;padding:22px;font-size:13.5px;line-height:1.85;color:#aeb9c6;overflow-x:auto;"><span style="color:#c792ea">const</span> <span style="color:#82aaff">mingyun</span> <span style="color:#89ddff">=</span> {
-  <span style="color:#7fdbca">role</span>: <span style="color:#34d399">"Full-Stack Developer"</span>,
-  <span style="color:#7fdbca">focus</span>: [<span style="color:#34d399">"AI integration"</span>, <span style="color:#34d399">"shipping"</span>],
-  <span style="color:#7fdbca">stack</span>: [<span style="color:#34d399">"Python"</span>, <span style="color:#34d399">"Next.js"</span>, <span style="color:#34d399">"FastAPI"</span>],
-  <span style="color:#7fdbca">shipped</span>: <span style="color:#34d399">"FROKY VAPE — live"</span>,
-  <span style="color:#7fdbca">status</span>: <span style="color:#34d399">"open to work"</span>
-}<span class="cursor"></span></pre>
-    </div>
+    <dl class="stats reveal">
+      <div><dt>운영 중인 실서비스</dt><dd>326<small>개 상품</small></dd><dd class="note">FROKY VAPE 매장 메뉴</dd></div>
+      <div><dt>AI 개발 대회</dt><dd>2<small>회 출전</small></dd><dd class="note">원티드 · 코리아IT아카데미</dd></div>
+      <div><dt>대표 프로젝트</dt><dd>10<small>개</small></dd><dd class="note">그 밖의 프로젝트 16개</dd></div>
+      <div><dt>현장 실무 경력</dt><dd>7<small>년+</small></dd><dd class="note">보안 · 매장 운영</dd></div>
+    </dl>
   </section>
 
-  <!-- STACK -->
-  <section class="sec" id="stack">
-    <div class="sec-head reveal"><span class="num mono">// 01</span><h2>기술 스택 <span class="en mono">Tech Stack</span></h2><span class="line"></span></div>
-    <div class="skill-grid reveal">
-      <div class="skill"><svg width="30" height="30" viewBox="0 0 24 24"><path fill="#3776AB" d="M11.9 2c-2 0-3.9.2-3.9 2.6v1.8h4v.6H5.5C3.4 7 2 8.2 2 11.6c0 3 .9 4.4 2.8 4.4h1.6v-2.2c0-2 1.7-3.6 3.7-3.6h4c1.7 0 3-1.4 3-3.1V4.6C20.5 2.8 16 2 11.9 2zM9.6 3.6c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9z"></path><path fill="#FFD43B" d="M12.1 22c2 0 3.9-.2 3.9-2.6v-1.8h-4v-.6h6.5c2.1 0 3.5-1.2 3.5-4.6 0-3-.9-4.4-2.8-4.4h-1.6v2.2c0 2-1.7 3.6-3.7 3.6h-4c-1.7 0-3 1.4-3 3.1v3.5C3.5 21.2 8 22 12.1 22zm2.3-1.6c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9z"></path></svg><span class="nm mono">Python</span></div>
-      <div class="skill"><svg width="30" height="30" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2.5" fill="#3178C6"></rect><path d="M13 11.5h5M15.5 11.5V18M6 18v-4.5H4V12h5.5v1.5H8V18z" fill="none" stroke="#fff" stroke-width="1.4"></path></svg><span class="nm mono">TypeScript</span></div>
-      <div class="skill"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.7"><ellipse cx="12" cy="6" rx="7" ry="3"></ellipse><path d="M5 6v12c0 1.66 3.13 3 7 3s7-1.34 7-3V6"></path><path d="M5 12c0 1.66 3.13 3 7 3s7-1.34 7-3"></path></svg><span class="nm mono">SQL</span></div>
-      <div class="skill"><svg width="30" height="30" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" fill="var(--text)"></circle><path d="M8.6 16.6V7.6l7 9.3V7.6" fill="none" stroke="var(--bg)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="nm mono">Next.js</span></div>
-      <div class="skill"><svg width="30" height="30" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" fill="#05998b"></circle><path d="M12.8 5.5 7 13h4l-.7 5.5L17 11h-4z" fill="#fff"></path></svg><span class="nm mono">FastAPI</span></div>
-      <div class="skill"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0C4B33"><path d="M3 4 12 2l9 2-1.6 13L12 22 4.6 17z" fill="#0C4B33" stroke="none"></path><path d="M8 7.5h2.4c1.7 0 2.8 1.4 2.8 4.3s-1.1 4.4-2.8 4.4H8z" fill="none" stroke="#fff" stroke-width="1.4"></path></svg><span class="nm mono">Django</span></div>
-      <div class="skill"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#D97757" stroke-width="2.1" stroke-linecap="round"><path d="M12 3.4v6.1M12 14.5v6.1M3.4 12h6.1M14.5 12h6.1M5.9 5.9l4.3 4.3M13.8 13.8l4.3 4.3M18.1 5.9l-4.3 4.3M10.2 13.8l-4.3 4.3"></path></svg><span class="nm mono">Claude · GPT-4o</span></div>
-      <div class="skill"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#EE4C2C" stroke-width="1.8"><path d="M9 4 6.5 6.5a7.5 7.5 0 1 0 11 0" stroke-linecap="round"></path><circle cx="15.2" cy="7" r="1.1" fill="#EE4C2C" stroke="none"></circle></svg><span class="nm mono">PyTorch · TF</span></div>
-    </div>
-    <div class="cat-grid reveal">
-      <div class="cat"><h3 class="mono">// LANGUAGES</h3><div class="tags mono"><span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">SQL</span><span class="tag">HTML/CSS</span></div></div>
-      <div class="cat"><h3 class="mono">// FRAMEWORKS</h3><div class="tags mono"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">FastAPI</span><span class="tag">Django</span><span class="tag">Streamlit</span><span class="tag">Node.js · Express</span><span class="tag">CrewAI</span><span class="tag">Flutter</span></div></div>
-      <div class="cat"><h3 class="mono">// AI · ML</h3><div class="tags mono"><span class="tag">Claude</span><span class="tag">GPT-4o</span><span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">Transformers</span><span class="tag">RAG / FAISS</span><span class="tag">QLoRA</span><span class="tag">Ollama (로컬 LLM)</span><span class="tag">MCP</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">OpenCV</span><span class="tag">KoNLPy</span></div></div>
-      <div class="cat"><h3 class="mono">// INFRA · TOOLS</h3><div class="tags mono"><span class="tag">AWS (EC2·RDS·S3)</span><span class="tag">Cloudflare Workers</span><span class="tag">Docker</span><span class="tag">PostgreSQL · MySQL</span><span class="tag">SQLite</span><span class="tag">Redis · Celery</span><span class="tag">Pydantic</span><span class="tag">OAuth 2.0</span><span class="tag">Nginx</span><span class="tag">Netlify · Vercel</span><span class="tag">Tailscale</span><span class="tag">Git · GitHub</span></div></div>
+  <!-- COMPETITIONS -->
+  <section class="sec" id="competitions">
+    <div class="sec-head reveal"><span class="num mono">01</span><h2>대회 <span class="en mono">Competitions</span></h2></div>
+    <div class="comp-grid reveal">
+      <a class="comp now" href="#p-avc">
+        <div class="comp-top"><span class="mono">2026.09</span><span class="pill live"><i></i>출품 · 예선 진행 중</span></div>
+        <h3>원티드 AI Championship 2026</h3>
+        <p class="comp-proj">출품작 <b>가게 체크 · AI Visibility Check</b></p>
+        <p>쇼핑몰 주소 하나로 AI와 고객에게 보여줄 정보를 점검하고, 무엇부터 고칠지 알려주는 진단 서비스. 기획부터 배포까지 혼자 만들었습니다.</p>
+        <span class="comp-more">프로젝트 자세히 보기 ↓</span>
+      </a>
+      <a class="comp" href="#p-edulink">
+        <div class="comp-top"><span class="mono">2026.04</span><span class="pill">4인 팀 · 7일</span></div>
+        <h3>코리아IT아카데미 강남 바이브코딩 대회</h3>
+        <p class="comp-proj">출품작 <b>EduLink AI</b> <span style="color:var(--muted)">· Code Horizon Team</span></p>
+        <p>교사 업무 자동화와 학생 맞춤 학습을 묶은 AI 교육 플랫폼. 4인 팀으로 7일 만에 기획·개발·배포했습니다.</p>
+        <span class="comp-more">프로젝트 자세히 보기 ↓</span>
+      </a>
     </div>
   </section>
 
   <!-- WORK -->
   <section class="sec" id="work">
-    <div class="sec-head reveal"><span class="num mono">// 02</span><h2>대표 프로젝트 <span class="en mono">Selected Work</span></h2><span class="line"></span></div>
+    <div class="sec-head reveal"><span class="num mono">02</span><h2>대표 프로젝트 <span class="en mono">Selected Work</span></h2></div>
     <div class="projects">
 
-      <article class="proj reveal">
+      <article class="proj reveal" id="p-avc">
         <span class="idx mono">01</span>
+        <div class="head"><h3>가게 체크 · AI Visibility Check</h3><span class="pill live"><i></i>원티드 AI Championship 2026 출품</span></div>
+        <p class="desc lead">쇼핑몰 주소 하나로 AI가 읽을 정보와 고객에게 보여줄 정보를 점검하고, 먼저 고칠 3가지를 알려주는 진단 서비스. (2026.09)</p>
+        <div class="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"></path></svg><div><span class="pk">기획 의도 · WHY</span><span class="pt">“당신의 쇼핑몰은 사람 손님과 AI 손님, 둘 다 받을 준비가 되어 있나요?” — 운영자는 무엇이 빠졌는지 알아도 <b>개발 용어가 어렵고 어디를 고쳐야 할지 몰라</b> 실행하지 못합니다. 기술 용어 대신 질문과 수정 안내를 먼저 보여주는 서비스로 기획.</span></div></div>
+        <div class="did">
+          <div class="dl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"></path></svg>내가 직접 구현한 것</div>
+          <ul>
+            <li>진단의 약 70%를 LLM 없이 <b>HTML·robots.txt 규칙 기반 파싱</b>으로 판정 — AI 호출 한도가 바닥나도 결과가 나오도록 설계</li>
+            <li>AI 정보·고객 정보 <b>2축 점수와 15개 세부 항목</b>, 근거와 함께 먼저 고칠 3가지·코드 예시·재검사 전후 비교 제공</li>
+            <li>Gemini로 소개 문구·고객 질문·FAQ 초안을 만들고, <b>브랜드명을 알려주지 않은 질문</b>으로 AI가 가게를 아는지 따로 확인</li>
+            <li>이메일 인증 + Google·카카오·네이버 로그인, 90일 검사 이력, 30일 공유 보고서·PDF, 로그인 페이지용 Chrome 확장프로그램</li>
+            <li>쇼핑몰 55곳 실태 조사 중 <b>robots.txt 허용목록을 ‘차단’으로 잘못 읽는 오류</b>를 공개 전에 원본 대조로 찾아 수정</li>
+          </ul>
+        </div>
+        <div class="rows">
+          <div class="row"><span class="lbl mono">ROLE</span><span class="val">기획 · 풀스택 · 배포 <span style="color:var(--muted)">단독 개발</span></span></div>
+          <div class="row"><span class="lbl mono">STACK</span><div class="tags mono"><span class="tag">React · Vite</span><span class="tag">Cloudflare Workers</span><span class="tag">Cloudflare D1</span><span class="tag">Gemini API</span><span class="tag">Chrome Extension</span><span class="tag">GitHub Actions</span></div></div>
+          <div class="row"><span class="lbl mono">RESULT</span><span class="val"><span style="color:var(--accent)">→</span> 자동 테스트 56개 · 운영 통합 점검 25개 통과, <strong>무료 한도 안에서 운영</strong>되는 진단 서비스 공개</span></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:9px;margin-top:16px;">
+          <a href="https://alswhitetiger.github.io/ai-visibility-check/" target="_blank" rel="noopener" class="mono" style="display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:8px;font-size:12.5px;font-weight:600;text-decoration:none;background:var(--accent);color:var(--on-accent);">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"></path></svg>서비스 보기
+          </a>
+          <a href="https://github.com/alswhitetiger/ai-visibility-check" target="_blank" rel="noopener" class="mono" style="display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:8px;font-size:12.5px;font-weight:600;text-decoration:none;background:transparent;color:var(--text);border:1px solid var(--border2);">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7 0-.7 0-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 4.5 18.3 4.8 18.3 4.8c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"></path></svg>GitHub 저장소
+          </a>
+        </div>
+      </article>
+
+      <article class="proj reveal">
+        <span class="idx mono">02</span>
         <div class="head"><h3>FROKY VAPE</h3><span class="pill live mono"><i></i>LIVE · 운영 중</span></div>
         <p class="desc lead">베이프 제품 메뉴 사이트 + 관리자 백엔드. 실제 매장에서 상품 326개를 운영 중.</p>
         <div class="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"></path></svg><div><span class="pk">기획 의도 · WHY</span><span class="pt">매장 운영자가 <b>코드 없이 상품을 바꿀 수 있어야 한다</b>는 전제에서 출발. 비개발자도 운영 가능한 구조를 목표로, 서버·DB 없이 비용 0원으로 돌아가는 서비스를 직접 기획.</span></div></div>
@@ -547,7 +608,7 @@
           <div class="row"><span class="lbl mono">RESULT</span><span class="val"><span style="color:var(--accent)">→</span> 브라우저에 토큰을 두지 않는 <strong>안전한 헤드리스 CMS</strong> · 실서비스 운영 중</span></div>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:9px;margin-top:16px;">
-          <a href="https://frokyvape-crypto.github.io/froky-vape-menu/" target="_blank" rel="noopener" class="mono" style="display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:8px;font-size:12.5px;font-weight:600;text-decoration:none;background:var(--accent);color:#06140e;transition:transform .18s ease,box-shadow .25s ease;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 22px -8px color-mix(in srgb,var(--accent) 60%,transparent)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+          <a href="https://frokyvape-crypto.github.io/froky-vape-menu/" target="_blank" rel="noopener" class="mono" style="display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:8px;font-size:12.5px;font-weight:600;text-decoration:none;background:var(--accent);color:var(--on-accent);transition:transform .18s ease,box-shadow .25s ease;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 22px -8px color-mix(in srgb,var(--accent) 60%,transparent)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"></path></svg>사용자 페이지 보기
           </a>
           <a href="https://frokyvape-crypto.github.io/froky-vape-menu/admin.html" target="_blank" rel="noopener" class="mono" style="display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:8px;font-size:12.5px;font-weight:600;text-decoration:none;background:transparent;color:var(--text);border:1px solid var(--border2);transition:transform .18s ease,border-color .2s ease;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='var(--accent)'" onmouseout="this.style.transform='';this.style.borderColor='var(--border2)'">
@@ -559,8 +620,8 @@
         </div>
       </article>
 
-      <article class="proj reveal">
-        <span class="idx mono">02</span>
+      <article class="proj reveal" id="p-bais">
+        <span class="idx mono">03</span>
         <div class="head"><h3>B.A.I.S — 야구 AI 해설</h3><span class="pill mono">팀 최종 프로젝트 · 6인</span></div>
         <p class="desc lead">“편파 해설 없이, 야구를 더 쉽게” — AI 해설위원이 야구 입문 장벽을 낮추는 웹 서비스. (SK네트웍스 Family AI 캠프 최종 프로젝트 · 2025.10~12)</p>
         <div class="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"></path></svg><div><span class="pk">기획 의도 · WHY</span><span class="pt">팀 자체 설문조사(n=65)로 <b>“어려운 용어·복잡한 규칙”과 “편파 해설 불만”</b>이 입문 장벽임을 직접 검증하고, 입문자에겐 쉬운 설명을·기존 팬에겐 편파 없는 해설을 주는 서비스로 기획.</span></div></div>
@@ -580,7 +641,7 @@
       </article>
 
       <article class="proj reveal">
-        <span class="idx mono">03</span>
+        <span class="idx mono">04</span>
         <div class="head"><h3>Jarvis Lite Pro</h3><span class="pill mono">멀티디바이스 AI 비서</span><span class="pill mono" style="color:var(--accent);border-color:color-mix(in srgb,var(--accent) 30%,transparent);">비공개</span></div>
         <p class="desc lead">데스크톱·노트북·안드로이드를 넘나드는 개인 AI 비서.</p>
         <div class="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"></path></svg><div><span class="pk">기획 의도 · WHY</span><span class="pt">여러 기기를 오가며 일하는 내 작업 흐름에서 출발 — <b>“어느 기기에서든 같은 비서를 부른다”</b>를 컨셉으로, 말한마디 바로 쓰는 개인용 AI를 직접 기획.</span></div></div>
@@ -598,10 +659,10 @@
         </div>
       </article>
 
-      <article class="proj reveal">
-        <span class="idx mono">04</span>
-        <div class="head"><h3>EduLink AI</h3><span class="pill mono">바이브코딩 대회 · 4인 팀</span></div>
-        <p class="desc lead">교사의 업무를 자동화하고 학생의 학습을 개인화하는 AI 교육 플랫폼. (Code Horizon Team · 바이브코딩 대회)</p>
+      <article class="proj reveal" id="p-edulink">
+        <span class="idx mono">05</span>
+        <div class="head"><h3>EduLink AI</h3><span class="pill">코리아IT아카데미 바이브코딩 대회 · 4인 팀 · 7일</span></div>
+        <p class="desc lead">교사의 업무를 자동화하고 학생의 학습을 개인화하는 AI 교육 플랫폼. (Code Horizon Team · 2026.04 코리아IT아카데미 강남 바이브코딩 대회)</p>
         <div class="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"></path></svg><div><span class="pk">기획 의도 · WHY</span><span class="pt">“학생이 잘 배우려면 교사가 가르치는 일에만 집중할 수 있어야 한다”는 문제의식에서 출발 — <b>출제·채점 같은 반복 업무는 AI에게, 학생에게는 맞춤 학습·진로 상담을</b> 주는 플랫폼으로 기획.</span></div></div>
         <div class="did">
           <div class="dl mono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"></path></svg>핵심 구현 <span style="color:var(--muted);font-weight:500;">— 풀스택 · 4인 협업</span></div>
@@ -617,7 +678,7 @@
           <div class="row"><span class="lbl mono">RESULT</span><span class="val"><span style="color:var(--accent)">→</span> 교사·학생·관리자 <strong>3개 역할 AI 교육 플랫폼</strong> 완성 · Vercel·Supabase 실제 배포</span></div>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:9px;margin-top:16px;">
-          <a href="https://frontend-eta-six-92.vercel.app" target="_blank" rel="noopener" class="mono" style="display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:8px;font-size:12.5px;font-weight:600;text-decoration:none;background:var(--accent);color:#06140e;">
+          <a href="https://frontend-eta-six-92.vercel.app" target="_blank" rel="noopener" class="mono" style="display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:8px;font-size:12.5px;font-weight:600;text-decoration:none;background:var(--accent);color:var(--on-accent);">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"></path></svg>데모 보기
           </a>
           <a href="https://github.com/alswhitetiger/Code-Horizon-team" target="_blank" rel="noopener" class="mono" style="display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:8px;font-size:12.5px;font-weight:600;text-decoration:none;background:transparent;color:var(--text);border:1px solid var(--border2);">
@@ -627,7 +688,7 @@
       </article>
 
       <article class="proj reveal">
-        <span class="idx mono">05</span>
+        <span class="idx mono">06</span>
         <div class="head"><h3>서울 시간여행 탐정</h3><span class="pill mono">AI 절차적 생성 게임</span></div>
         <p class="desc lead">1950년대 서울 배경의 추리 게임 — 매 플레이마다 새 사건이 생성되는 무한 리플레이.</p>
         <div class="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"></path></svg><div><span class="pk">기획 의도 · WHY</span><span class="pt">정해진 추리게임은 한 번 풀면 끝이라는 한계에서 출발 — <b>“매번 다른 사건”을 핵심 가치</b>로 잡고 AI 절차적 생성으로 풀어내는 게임을 기획.</span></div></div>
@@ -646,7 +707,7 @@
       </article>
 
       <article class="proj reveal">
-        <span class="idx mono">06</span>
+        <span class="idx mono">07</span>
         <div class="head"><h3>쇼핑몰 통합 관리 대시보드</h3><span class="pill mono">실무 · 운영 도구</span><span class="pill mono" style="color:var(--accent);border-color:color-mix(in srgb,var(--accent) 30%,transparent);">비공개</span></div>
         <p class="desc lead">카페24 기반 쇼핑몰의 상품·주문·CS·판매진단을 한 곳에서 처리하는 운영 대시보드.</p>
         <div class="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"></path></svg><div><span class="pk">기획 의도 · WHY</span><span class="pt">직접 운영하며 겪은 <b>채널별 반복 작업·누락 문제를 스스로 정의</b>하고, “하나의 화면에서 모든 마켓을 관제한다”는 목표로 필요 기능을 직접 기획한 현업발 도구.</span></div></div>
@@ -665,7 +726,7 @@
       </article>
 
       <article class="proj reveal">
-        <span class="idx mono">07</span>
+        <span class="idx mono">08</span>
         <div class="head"><h3>종합 AI 대화창 <span style="font-weight:500;color:var(--muted);font-size:.7em;">Multi-Agent AI Hub</span></h3><span class="pill mono">멀티에이전트 오케스트레이션</span><span class="pill mono" style="color:var(--accent);border-color:color-mix(in srgb,var(--accent) 30%,transparent);">비공개</span></div>
         <p class="desc lead">Claude·Codex·Hermes·Ollama 4개 AI를 한 화면에서 묶어 쓰는 로컬 채팅 프로그램 — 외부 서버 없이 PC에서만 동작.</p>
         <div class="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"></path></svg><div><span class="pk">기획 의도 · WHY</span><span class="pt">여러 AI를 따로 켜서 쓰며 맥락이 끊기는 불편에서 출발 — <b>“한 창에서 비교·협업하고 기억은 이어진다”</b>를 컨셉으로 오케스트레이션 구조를 직접 기획.</span></div></div>
@@ -685,7 +746,7 @@
       </article>
 
       <article class="proj reveal">
-        <span class="idx mono">08</span>
+        <span class="idx mono">09</span>
         <div class="head"><h3>모의투자 랩</h3><span class="pill mono">전략 검증 · 백테스트</span></div>
         <p class="desc lead">실제 시세로 연습하는 한국·미국 주식 모의투자 대시보드. 교육용이며 실거래 권유가 아닙니다.</p>
         <div class="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"></path></svg><div><span class="pk">기획 의도 · WHY</span><span class="pt">첫 전략(이동평균+손절 8%·익절 15%)이 백테스트에서 <b>단순 보유에 크게 졌습니다</b>(삼성전자 +16% vs +254%). “내 규칙이 값을 더하는가”를 숫자로 확인하고 가설을 버리는 것을 프로젝트의 목표로 재설정.</span></div></div>
@@ -706,7 +767,7 @@
       </article>
 
       <article class="proj reveal">
-        <span class="idx mono">09</span>
+        <span class="idx mono">10</span>
         <div class="head"><h3>여행 준비 허브</h3><span class="pill mono">API 키 없이 동작</span></div>
         <p class="desc lead">목적지와 날짜를 정하면 명소·맛집·날씨·공휴일·항공·숭소·번역을 한 화면에서 보는 여행 준비 웹앱.</p>
         <div class="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"></path></svg><div><span class="pk">기획 의도 · WHY</span><span class="pt">“유료 키가 없으면 기능을 가짜로 채운다”는 선택을 거부 — <b>키 없이 진짜로 동작하는 것으로 기획을 바꾸는</b> 방향을 잡고, 못 하는 것은 화면에 그대로 적었습니다.</span></div></div>
@@ -726,7 +787,8 @@
         </div>
       </article>
 
-      <div class="reveal">
+      <details class="more reveal">
+        <summary>그 밖의 프로젝트 16개 더 보기</summary>
         <div class="more-grid">
           <div class="mcard"><h3>호그와트 음성 어드벤처</h3><p>STT/TTS 실시간 음성 대화로 진행하는 GM 페르소나 스토리 게임.</p><div class="tags mono"><span class="tag">GPT-4o-mini</span><span class="tag">STT/TTS</span></div></div>
           <div class="mcard"><h3>영화 리뷰 감성분석 모델</h3><p>NSMC 20만 문장으로 학습한 LSTM 한국어 긍·부정 분류 모델.</p><div class="tags mono"><span class="tag">TensorFlow</span><span class="tag">LSTM</span><span class="tag">KoNLPy</span></div></div>
@@ -745,18 +807,29 @@
           <div class="mcard"><h3>저장소 유지관리 자동화</h3><p>평일마다 GitHub 저장소 상태를 점검하고 기록하는 루틴. 50개가 넘는 저장소를 방치하지 않기 위해 점검 자체를 반복 가능한 작업으로 정리.</p><div class="tags mono"><span class="tag">GitHub</span><span class="tag">자동화</span></div></div>
           <div class="mcard"><h3>로컬 AI 장기기억 서버</h3><p>Claude·Codex·Hermes 로컬 대화를 자동 수집해 장기 기억으로 추출·검토·승인하는 로컬 서버. 의미 벡터 하이브리드 검색, 민감정보 자동 마스킹, AES-256 암호화 멀티 PC 동기화, 종합 AI 대화창과 통합.</p><div class="tags mono"><span class="tag">Node.js</span><span class="tag">MCP 도구 11종</span><span class="tag">로컬 벡터 검색</span></div></div>
         </div>
-      </div>
+      </details>
 
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="sec" id="stack">
+    <div class="sec-head reveal"><span class="num mono">03</span><h2>기술 스택 <span class="en mono">Tech Stack</span></h2></div>
+    <div class="cat-grid reveal">
+      <div class="cat"><h3 class="mono">LANGUAGES</h3><div class="tags mono"><span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">SQL</span><span class="tag">HTML/CSS</span></div></div>
+      <div class="cat"><h3 class="mono">FRAMEWORKS</h3><div class="tags mono"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">FastAPI</span><span class="tag">Django</span><span class="tag">Streamlit</span><span class="tag">Node.js · Express</span><span class="tag">CrewAI</span><span class="tag">Flutter</span></div></div>
+      <div class="cat"><h3 class="mono">AI · ML</h3><div class="tags mono"><span class="tag">Claude</span><span class="tag">GPT-4o</span><span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">Transformers</span><span class="tag">RAG / FAISS</span><span class="tag">QLoRA</span><span class="tag">Ollama (로컬 LLM)</span><span class="tag">MCP</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">OpenCV</span><span class="tag">KoNLPy</span></div></div>
+      <div class="cat"><h3 class="mono">INFRA · TOOLS</h3><div class="tags mono"><span class="tag">AWS (EC2·RDS·S3)</span><span class="tag">Cloudflare Workers</span><span class="tag">Docker</span><span class="tag">PostgreSQL · MySQL</span><span class="tag">SQLite</span><span class="tag">Redis · Celery</span><span class="tag">Pydantic</span><span class="tag">OAuth 2.0</span><span class="tag">Nginx</span><span class="tag">Netlify · Vercel</span><span class="tag">Tailscale</span><span class="tag">Git · GitHub</span></div></div>
     </div>
   </section>
 
   <!-- BOOTCAMP -->
   <section class="sec" id="bootcamp">
-    <div class="sec-head reveal"><span class="num mono">// 03</span><h2>부트캠프 단위 프로젝트 <span class="en mono">Bootcamp Track</span></h2><span class="line"></span></div>
+    <div class="sec-head reveal"><span class="num mono">04</span><h2>부트캠프 단위 프로젝트 <span class="en mono">Bootcamp Track</span></h2></div>
     <p class="reveal" style="max-width:64ch;font-size:15px;line-height:1.7;color:var(--text2);margin:-8px 0 26px;">SK네트웍스 Family AI 캠프 17기에서 6개월간 진행한 팀 프로젝트입니다. 데이터 분석에서 시작해 머신러닝·RAG·웹 서비스·최종 AI 서비스까지, <b style="color:var(--text);">단계마다 무엇이 안 됐고 그래서 다음에 무엇을 바꿨는지</b>를 함께 적었습니다.</p>
     <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:14px;">
 
-      <div style="padding:20px 22px;border-radius:12px;background:var(--surface);border:1px solid var(--border);">
+      <div style="padding:20px 22px;border-radius:8px;background:var(--surface);border:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:9px;margin-bottom:10px;flex-wrap:wrap;">
           <span class="mono" style="font-size:10px;font-weight:700;padding:3px 8px;border-radius:5px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);">미니 · EDA</span>
           <span class="mono" style="font-size:10.5px;color:var(--muted);">2025.07 · 5인</span>
@@ -767,7 +840,7 @@
         <div class="tags mono" style="margin-top:12px;"><span class="tag">Python</span><span class="tag">Selenium</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span></div>
       </div>
 
-      <div style="padding:20px 22px;border-radius:12px;background:var(--surface);border:1px solid var(--border);">
+      <div style="padding:20px 22px;border-radius:8px;background:var(--surface);border:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:9px;margin-bottom:10px;flex-wrap:wrap;">
           <span class="mono" style="font-size:10px;font-weight:700;padding:3px 8px;border-radius:5px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);">미니 · ML</span>
           <span class="mono" style="font-size:10.5px;color:var(--muted);">2025.07 · 5인</span>
@@ -778,7 +851,7 @@
         <div class="tags mono" style="margin-top:12px;"><span class="tag">Scikit-learn</span><span class="tag">XGBoost</span><span class="tag">LightGBM</span></div>
       </div>
 
-      <div style="padding:20px 22px;border-radius:12px;background:var(--surface);border:1px solid var(--border);">
+      <div style="padding:20px 22px;border-radius:8px;background:var(--surface);border:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:9px;margin-bottom:10px;flex-wrap:wrap;">
           <span class="mono" style="font-size:10px;font-weight:700;padding:3px 8px;border-radius:5px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);">1차 단위</span>
           <span class="mono" style="font-size:10.5px;color:var(--muted);">2025.08 · 5인</span>
@@ -789,7 +862,7 @@
         <div class="tags mono" style="margin-top:12px;"><span class="tag">Python</span><span class="tag">MySQL</span><span class="tag">Streamlit</span><span class="tag">Selenium</span></div>
       </div>
 
-      <div style="padding:20px 22px;border-radius:12px;background:var(--surface);border:1px solid var(--border);">
+      <div style="padding:20px 22px;border-radius:8px;background:var(--surface);border:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:9px;margin-bottom:10px;flex-wrap:wrap;">
           <span class="mono" style="font-size:10px;font-weight:700;padding:3px 8px;border-radius:5px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);">2차 단위</span>
           <span class="mono" style="font-size:10.5px;color:var(--muted);">2025.08 · 5인</span>
@@ -800,7 +873,7 @@
         <div class="tags mono" style="margin-top:12px;"><span class="tag">XGBoost</span><span class="tag">CatBoost</span><span class="tag">LightGBM</span><span class="tag">Optuna</span><span class="tag">Soft Voting</span></div>
       </div>
 
-      <div style="padding:20px 22px;border-radius:12px;background:var(--surface);border:1px solid var(--border);">
+      <div style="padding:20px 22px;border-radius:8px;background:var(--surface);border:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:9px;margin-bottom:10px;flex-wrap:wrap;">
           <span class="mono" style="font-size:10px;font-weight:700;padding:3px 8px;border-radius:5px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);">3차 단위</span>
           <span class="mono" style="font-size:10.5px;color:var(--muted);">2025.09 · 5인</span>
@@ -811,7 +884,7 @@
         <div class="tags mono" style="margin-top:12px;"><span class="tag">RAG</span><span class="tag">FAISS</span><span class="tag">bge-m3</span><span class="tag">Qwen2.5-7B</span><span class="tag">LangChain</span></div>
       </div>
 
-      <div style="padding:20px 22px;border-radius:12px;background:var(--surface);border:1px solid var(--border);">
+      <div style="padding:20px 22px;border-radius:8px;background:var(--surface);border:1px solid var(--border);">
         <div style="display:flex;align-items:center;gap:9px;margin-bottom:10px;flex-wrap:wrap;">
           <span class="mono" style="font-size:10px;font-weight:700;padding:3px 8px;border-radius:5px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);">4차 단위</span>
           <span class="mono" style="font-size:10.5px;color:var(--muted);">2025.09 · 5인</span>
@@ -822,14 +895,14 @@
         <div class="tags mono" style="margin-top:12px;"><span class="tag">Django</span><span class="tag">Docker</span><span class="tag">AWS</span><span class="tag">Nginx</span><span class="tag">RunPod</span><span class="tag">MySQL</span></div>
       </div>
 
-      <div style="padding:20px 22px;border-radius:12px;background:color-mix(in srgb,var(--accent) 7%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 30%,var(--border));">
+      <div style="padding:20px 22px;border-radius:8px;background:color-mix(in srgb,var(--accent) 7%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 30%,var(--border));">
         <div style="display:flex;align-items:center;gap:9px;margin-bottom:10px;flex-wrap:wrap;">
-          <span class="mono" style="font-size:10px;font-weight:700;padding:3px 8px;border-radius:5px;background:var(--accent);color:#06140e;">최종 프로젝트</span>
+          <span class="mono" style="font-size:10px;font-weight:700;padding:3px 8px;border-radius:5px;background:var(--accent);color:var(--on-accent);">최종 프로젝트</span>
           <span class="mono" style="font-size:10.5px;color:var(--muted);">2025.10~12 · 6인</span>
         </div>
         <h3 style="font-size:16px;font-weight:700;margin-bottom:8px;letter-spacing:-.01em;">B.A.I.S — 야구 AI 해설</h3>
         <p style="font-size:13.5px;line-height:1.6;color:var(--text2);margin-bottom:11px;">여섯 단계에서 쌓은 것 — 데이터 수집, 모델 비교, RAG, 배포 — 을 전부 합친 최종 결과물. sLLM·VLM·RAG를 묶은 멀티모달 파이프라인을 백엔드에서 담당했습니다.</p>
-        <a href="#work" class="mono" style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--accent);text-decoration:none;">위 대표 프로젝트 02에서 자세히 보기 <span>↑</span></a>
+        <a href="#p-bais" class="mono" style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--accent);text-decoration:none;">위 대표 프로젝트 03에서 자세히 보기 <span>↑</span></a>
       </div>
 
     </div>
@@ -837,35 +910,35 @@
 
   <!-- PRINCIPLES -->
   <section class="sec" id="principles">
-    <div class="sec-head reveal"><span class="num mono">// 04</span><h2>일하는 원칙 <span class="en mono">How I Build</span></h2><span class="line"></span></div>
+    <div class="sec-head reveal"><span class="num mono">05</span><h2>일하는 원칙 <span class="en mono">How I Build</span></h2></div>
     <p class="reveal" style="max-width:62ch;font-size:15px;line-height:1.7;color:var(--text2);margin:-8px 0 26px;">프로젝트를 만들면서 반복해서 동일한 판단을 하게 된 기준들입니다. 각각 실제 프로젝트에 근거가 있습니다.</p>
     <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:14px;">
-      <div style="padding:20px 22px;border-radius:12px;background:var(--surface);border:1px solid var(--border);">
+      <div style="padding:20px 22px;border-radius:8px;background:var(--surface);border:1px solid var(--border);">
         <div class="mono" style="font-size:10.5px;font-weight:700;color:var(--accent);letter-spacing:.06em;margin-bottom:9px;">01</div>
         <h3 style="font-size:16px;font-weight:700;margin-bottom:9px;letter-spacing:-.01em;">비밀은 프론트에 두지 않는다</h3>
         <p style="font-size:13.5px;line-height:1.62;color:var(--text2);">토큰·API 키는 예외 없이 서버 뒤로 격리합니다. FROKY는 Cloudflare Worker 프록시로, 여행 허브·모의투자 랩은 서버리스 함수로 그렇게 만들었습니다.</p>
       </div>
-      <div style="padding:20px 22px;border-radius:12px;background:var(--surface);border:1px solid var(--border);">
+      <div style="padding:20px 22px;border-radius:8px;background:var(--surface);border:1px solid var(--border);">
         <div class="mono" style="font-size:10.5px;font-weight:700;color:var(--accent);letter-spacing:.06em;margin-bottom:9px;">02</div>
         <h3 style="font-size:16px;font-weight:700;margin-bottom:9px;letter-spacing:-.01em;">없는 데이터를 지어내지 않는다</h3>
         <p style="font-size:13.5px;line-height:1.62;color:var(--text2);">별점이 없는 데이터에 가짜 별점을 붙이는 대신, 할 수 있는 정렬로 바꾸고 <b style="color:var(--text);">그 사실을 화면에 적습니다.</b> 기능을 채우는 것보다 믿을 수 있는 게 먼저라고 생각합니다.</p>
       </div>
-      <div style="padding:20px 22px;border-radius:12px;background:var(--surface);border:1px solid var(--border);">
+      <div style="padding:20px 22px;border-radius:8px;background:var(--surface);border:1px solid var(--border);">
         <div class="mono" style="font-size:10.5px;font-weight:700;color:var(--accent);letter-spacing:.06em;margin-bottom:9px;">03</div>
         <h3 style="font-size:16px;font-weight:700;margin-bottom:9px;letter-spacing:-.01em;">내 가설을 숫자로 친다</h3>
         <p style="font-size:13.5px;line-height:1.62;color:var(--text2);">공들인 전략이라도 기준선에 지면 버립니다. 모의투자 랩에서 11가지 전략을 63개 구간에 돌리고, <b style="color:var(--text);">버린 것들까지 기록</b>해 둔 이유입니다.</p>
       </div>
-      <div style="padding:20px 22px;border-radius:12px;background:var(--surface);border:1px solid var(--border);">
+      <div style="padding:20px 22px;border-radius:8px;background:var(--surface);border:1px solid var(--border);">
         <div class="mono" style="font-size:10.5px;font-weight:700;color:var(--accent);letter-spacing:.06em;margin-bottom:9px;">04</div>
         <h3 style="font-size:16px;font-weight:700;margin-bottom:9px;letter-spacing:-.01em;">위험한 동작에는 사람을 둔다</h3>
         <p style="font-size:13.5px;line-height:1.62;color:var(--text2);">자동화할수록 멈춤점이 중요해집니다. 실계좌 주문은 건별 승인, AI 에이전트는 권한 3단계 격리로 <b style="color:var(--text);">사람이 마지막을 결정</b>하게 만듭니다.</p>
       </div>
-      <div style="padding:20px 22px;border-radius:12px;background:var(--surface);border:1px solid var(--border);">
+      <div style="padding:20px 22px;border-radius:8px;background:var(--surface);border:1px solid var(--border);">
         <div class="mono" style="font-size:10.5px;font-weight:700;color:var(--accent);letter-spacing:.06em;margin-bottom:9px;">05</div>
         <h3 style="font-size:16px;font-weight:700;margin-bottom:9px;letter-spacing:-.01em;">쓰는 사람이 운영할 수 있게</h3>
         <p style="font-size:13.5px;line-height:1.62;color:var(--text2);">직접 매장을 운영해봤기 때문에, 비개발자가 코드 없이 바꿀 수 있는지를 먼저 봅니다. 쓰지 못하는 기능은 없는 기능이라고 생각합니다.</p>
       </div>
-      <div style="padding:20px 22px;border-radius:12px;background:var(--surface);border:1px solid var(--border);">
+      <div style="padding:20px 22px;border-radius:8px;background:var(--surface);border:1px solid var(--border);">
         <div class="mono" style="font-size:10.5px;font-weight:700;color:var(--accent);letter-spacing:.06em;margin-bottom:9px;">06</div>
         <h3 style="font-size:16px;font-weight:700;margin-bottom:9px;letter-spacing:-.01em;">만들었으면 띄운다</h3>
         <p style="font-size:13.5px;line-height:1.62;color:var(--text2);">로컬에서 돌아가는 것은 아직 끝난 게 아니라고 봅니다. 배포·도메인·SEO·색인까지 묶어야 실제로 쓰이는 서비스가 됩니다.</p>
@@ -875,7 +948,7 @@
 
   <!-- ABOUT -->
   <section class="sec" id="about">
-    <div class="sec-head reveal"><span class="num mono">// 05</span><h2>경력 · 교육 <span class="en mono">Experience &amp; Education</span></h2><span class="line"></span></div>
+    <div class="sec-head reveal"><span class="num mono">06</span><h2>경력 · 교육 <span class="en mono">Experience &amp; Education</span></h2></div>
     <div class="about-lead reveal">
       <p style="font-size:clamp(.98rem,1.7vw,1.12rem);line-height:1.75;color:var(--text);">7년 넘게 현장에서 손님과 팀을 상대하며 <strong style="color:var(--accent);font-weight:700;">"끝까지 책임지고, 빨리 배우고, 사람과 금방 친해진다"</strong>를 몸으로 익혔습니다. 그 태도를 그대로 개발에 옮겨 — 막히면 끝까지 파고, 새 도구는 일단 만들면서 배우고, 팀에선 빠르게 녹아듭니다.</p>
       <p style="margin-top:14px;font-size:14px;line-height:1.7;color:var(--text2);">그래서 저는 "이제 막 시작한 신입"이지만, 현장에서 검증된 일하는 태도를 가진 개발자입니다. AI 캠프 수료 후 짧은 기간에 실서비스(FROKY VAPE)와 팀 최종 프로젝트(B.A.I.S)를 출시하며 그걸 증명했습니다.</p>
@@ -884,7 +957,7 @@
       <div class="ab acc"><div class="k mono">7Y+ FIELD</div><div class="t">다양한 현장 실무 경험</div><p>서비스·매니저·보안 등 약 7년 5개월의 현장 실무 경험을 바탕으로 개발로 전환. 맡은 일을 끝까지 책임지고 풀어내는 태도를 현장에서 체화했습니다.</p></div>
       <div class="ab"><div class="k mono">EDUCATION</div><div class="t">대구과학대학교</div><p>경찰행정 전공 · Daegu Science University</p></div>
       <div class="ab"><div class="k mono">BOOTCAMP</div><div class="t">SK네트웍스 × 엔코아</div><p>Family AI 캠프 수료 — Python·SQL·머신러닝·LLM 전 과정. 단위 팀 프로젝트 7회 전회 수행, 최종 프로젝트 B.A.I.S 6인 팀 개발.</p></div>
-      <div class="ab"><div class="k mono">HACKATHON</div><div class="t">바이브코딩 대회</div><p>4인 팀(Code Horizon Team)으로 AI 교육 플랫폼 EduLink AI를 기획·개발·배포.</p></div>
+      <div class="ab acc"><div class="k mono">COMPETITIONS</div><div class="t">AI 개발 대회 2회 출전</div><p><b>2026.09</b> 원티드 AI Championship 2026 — AI Visibility Check 단독 출품<br><b>2026.04</b> 코리아IT아카데미 강남 바이브코딩 대회 — 4인 팀, EduLink AI</p></div>
     </div>
   </section>
 
@@ -915,30 +988,30 @@
   <div class="rsm-sheet">
     <header style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;padding-bottom:16px;border-bottom:2px solid #13181f;">
       <div>
-        <div class="mono" style="font-size:12px;font-weight:600;color:#0a9d6e;letter-spacing:.04em;margin-bottom:6px;">AI 활용 풀스택 개발자 · AI/ML 엔지니어</div>
+        <div class="mono" style="font-size:12px;font-weight:600;color:#2563eb;letter-spacing:.04em;margin-bottom:6px;">AI 활용 풀스택 개발자 · AI/ML 엔지니어</div>
         <h1 style="margin:0;font-size:33px;font-weight:800;letter-spacing:-.02em;line-height:1;">김민균</h1>
         <div class="mono" style="font-size:11px;color:#4f5b68;margin-top:7px;">남 · 1998년생 (만 28세) · 군필</div>
       </div>
       <div class="mono" style="font-size:11.5px;line-height:1.85;color:#23303c;text-align:right;">
-        <div><span style="color:#0a9d6e;">✉</span> alsrbsrkdud@naver.com</div>
-        <div><span style="color:#0a9d6e;">⌥</span> github.com/alswhitetiger</div>
-        <div><span style="color:#0a9d6e;">☎</span> 010-2901-9469</div>
-        <div><span style="color:#0a9d6e;">⌖</span> 경기 부천시 원종동</div>
+        <div><span style="color:#2563eb;">✉</span> alsrbsrkdud@naver.com</div>
+        <div><span style="color:#2563eb;">⌥</span> github.com/alswhitetiger</div>
+        <div><span style="color:#2563eb;">☎</span> 010-2901-9469</div>
+        <div><span style="color:#2563eb;">⌖</span> 경기 부천시 원종동</div>
       </div>
     </header>
 
     <div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
       <div style="background:#f4f7fa;border:1px solid #e1e7ee;border-radius:9px;padding:11px 14px;">
-        <div class="mono" style="font-size:11px;font-weight:700;color:#0a9d6e;margin-bottom:4px;">지원 분야</div>
+        <div class="mono" style="font-size:11px;font-weight:700;color:#2563eb;margin-bottom:4px;">지원 분야</div>
         <div style="font-size:12.5px;line-height:1.5;color:#23303c;">AI 서비스 개발자 · AI/ML 엔지니어 · AI 보안 전문가</div>
       </div>
       <div style="background:#f4f7fa;border:1px solid #e1e7ee;border-radius:9px;padding:11px 14px;">
-        <div class="mono" style="font-size:11px;font-weight:700;color:#0a9d6e;margin-bottom:4px;">희망 근무</div>
+        <div class="mono" style="font-size:11px;font-weight:700;color:#2563eb;margin-bottom:4px;">희망 근무</div>
         <div style="font-size:12.5px;line-height:1.5;color:#23303c;">정규직·계약직 · 서울·경기·인천 · 연봉 면접 후 결정</div>
       </div>
     </div>
 
-    <p style="margin:16px 0 0;font-size:14px;line-height:1.65;color:#1f2630;">7년 넘는 현장 실무(보안·경호·매장 매니저)에서 <strong style="color:#0a9d6e;">끝까지 책임지고 빠르게 배우는 태도</strong>를 익히고 개발로 전환했습니다. SK네트웍스 Family AI 캠프 수료 후 짧은 기간에 <strong>실서비스 커머스 웹앱(FROKY VAPE)</strong>과 <strong>팀 AI 플랫폼(B.A.I.S·EduLink AI)</strong>을 출시 — 기획부터 배포·운영까지 직접 끝내는 풀스택 개발자입니다.</p>
+    <p style="margin:16px 0 0;font-size:14px;line-height:1.65;color:#1f2630;">7년 넘는 현장 실무(보안·경호·매장 매니저)에서 <strong style="color:#2563eb;">끝까지 책임지고 빠르게 배우는 태도</strong>를 익히고 개발로 전환했습니다. SK네트웍스 Family AI 캠프 수료 후 짧은 기간에 <strong>실서비스 커머스 웹앱(FROKY VAPE)</strong>과 <strong>팀 AI 플랫폼(B.A.I.S·EduLink AI)</strong>을 출시 — 기획부터 배포·운영까지 직접 끝내는 풀스택 개발자입니다. 2026년에는 <strong>AI 개발 대회 2곳</strong>(코리아IT아카데미 바이브코딩 대회 · 원티드 AI Championship 2026)에 출전했습니다.</p>
 
     <h2 class="rsm-h"><span class="hash">#</span> 보유 기술<span class="ln"></span></h2>
     <div style="display:grid;grid-template-columns:84px 1fr;gap:8px 14px;font-size:13px;line-height:1.5;">
@@ -951,15 +1024,22 @@
 
     <h2 class="rsm-h"><span class="hash">#</span> 프로젝트<span class="ln"></span></h2>
     <div style="display:flex;flex-direction:column;gap:9px;">
-      <div class="rsm-row"><div><span style="font-weight:800;">FROKY VAPE</span><div class="mono" style="font-size:11px;color:#0a9d6e;">단독 · 운영 중</div></div><div style="color:#23303c;">단일 HTML 풀스택 커머스 웹앱(장바구니·검색·결제). <strong style="color:#13181f;">기획~배포 단독 완주, 실서비스 운영 중.</strong> Cloudflare Worker 보안 백엔드·상품 326개 관리.</div></div>
+      <div class="rsm-row"><div><span style="font-weight:800;">AI Visibility Check</span><div class="mono" style="font-size:11px;color:#2563eb;">단독 · 대회 출품</div></div><div style="color:#23303c;">쇼핑몰 주소로 AI·고객용 정보를 점검하는 진단 서비스(React·Cloudflare Worker·D1·Gemini). 진단의 약 70%를 규칙 기반으로 판정해 AI 없이도 결과 제공. <strong style="color:#13181f;">자동 테스트 56개 · 운영 점검 25개 통과, 무료 한도 내 운영.</strong></div></div>
+      <div class="rsm-row"><div><span style="font-weight:800;">FROKY VAPE</span><div class="mono" style="font-size:11px;color:#2563eb;">단독 · 운영 중</div></div><div style="color:#23303c;">단일 HTML 풀스택 커머스 웹앱(장바구니·검색·결제). <strong style="color:#13181f;">기획~배포 단독 완주, 실서비스 운영 중.</strong> Cloudflare Worker 보안 백엔드·상품 326개 관리.</div></div>
       <div class="rsm-row"><div><span style="font-weight:800;">B.A.I.S</span><div class="mono" style="font-size:11px;color:#4f5b68;">6인 팀</div></div><div style="color:#23303c;">야구 AI 해설 — sLLM·VLM·RAG 멀티모달. 백엔드·AI 연동·배포. <strong style="color:#13181f;">처리량 4→15/h, 할루시네이션 90%+ 개선.</strong></div></div>
-      <div class="rsm-row"><div><span style="font-weight:800;">EduLink AI</span><div class="mono" style="font-size:11px;color:#4f5b68;">4인 팀 · 대회</div></div><div style="color:#23303c;">AI 교육 플랫폼(Next.js·FastAPI·Claude API). 문제 자동 생성·채점, AI 진로 상담(Qwen2.5). <strong style="color:#13181f;">교사·학생·관리자 3개 역할 플랫폼 완성 · Vercel·Supabase 배포.</strong></div></div>
+      <div class="rsm-row"><div><span style="font-weight:800;">EduLink AI</span><div class="mono" style="font-size:11px;color:#4f5b68;">4인 팀 · 바이브코딩 대회</div></div><div style="color:#23303c;">AI 교육 플랫폼(Next.js·FastAPI·Claude API). 문제 자동 생성·채점, AI 진로 상담(Qwen2.5). <strong style="color:#13181f;">교사·학생·관리자 3개 역할 플랫폼 완성 · Vercel·Supabase 배포.</strong></div></div>
       <div class="rsm-row"><div><span style="font-weight:800;">Jarvis Lite Pro</span><div class="mono" style="font-size:11px;color:#4f5b68;">단독 · 비공개</div></div><div style="color:#23303c;">멀티디바이스 AI 비서(FastAPI·Flutter·Tailscale). <strong style="color:#13181f;">토큰 인증·화이트리스트 보안 직접 설계.</strong></div></div>
       <div class="rsm-row"><div><span style="font-weight:800;">쇼핑몰 통합 관리 대시보드</span><div class="mono" style="font-size:11px;color:#4f5b68;">단독 · 실무</div></div><div style="color:#23303c;">카페24 OAuth·멀티마켓 상품 등록·판매진단 운영 도구. <strong style="color:#13181f;">상품·주문·CS·SEO를 하나로 통합·자동화.</strong></div></div>
       <div class="rsm-row"><div><span style="font-weight:800;">종합 AI 대화창</span><div class="mono" style="font-size:11px;color:#4f5b68;">단독 · 비공개</div></div><div style="color:#23303c;">Claude·Codex·Hermes·Ollama 멀티에이전트 허브(단일·비교·협업·장기기억). <strong style="color:#13181f;">안전/작업/전체 3단계 권한 격리·로컬 장기기억 연동 직접 설계.</strong></div></div>
       <div class="rsm-row"><div><span style="font-weight:800;">서울 시간여행 탐정</span><div class="mono" style="font-size:11px;color:#4f5b68;">단독</div></div><div style="color:#23303c;">GPT-4o·DALL·E 3로 매번 새 사건을 생성하는 <strong style="color:#13181f;">절차적 생성(PCG) 추리 게임.</strong></div></div>
       <div class="rsm-row"><div><span style="font-weight:800;">모의투자 랩</span><div class="mono" style="font-size:11px;color:#4f5b68;">단독</div></div><div style="color:#23303c;">한국·미국 주식 모의투자 대시보드. 첫 전략이 기준선에 지는 것을 백테스트로 확인해 폐기하고, 11가지 후보를 63개 구간에 검증. <strong style="color:#13181f;">수수료·세금 반영 후에도 국내 +54%p · 국외 +19%p로 기준선 상회.</strong></div></div>
       <div class="rsm-row"><div><span style="font-weight:800;">여행 준비 허브</span><div class="mono" style="font-size:11px;color:#4f5b68;">단독</div></div><div style="color:#23303c;">명소·맛집·날씨·공휴일·항공·번역을 한 화면에 모은 여행 준비 웹앱. 외부 API를 전부 서버 함수 뒤로 격리. <strong style="color:#13181f;">유료 키 없이 전 기능 동작 · PWA 대응.</strong></div></div>
+    </div>
+
+    <h2 class="rsm-h"><span class="hash">#</span> 대회<span class="ln"></span></h2>
+    <div style="display:flex;flex-direction:column;gap:9px;">
+      <div class="rsm-row"><div class="dt">2026.09</div><div><strong>원티드 AI Championship 2026</strong> <span style="color:#4f5b68;">· 출품 · 단독</span><div style="color:#23303c;">쇼핑몰 AI 가시성 진단 서비스 <strong>가게 체크 · AI Visibility Check</strong> 기획·개발·배포. 규칙 기반 진단 + Gemini, Cloudflare Worker·D1.</div></div></div>
+      <div class="rsm-row"><div class="dt">2026.04</div><div><strong>코리아IT아카데미 강남 바이브코딩 대회</strong> <span style="color:#4f5b68;">· 4인 팀 (Code Horizon Team)</span><div style="color:#23303c;">AI 교육 플랫폼 <strong>EduLink AI</strong>를 7일 만에 기획·개발·배포 (Next.js·FastAPI·Claude API).</div></div></div>
     </div>
 
     <h2 class="rsm-h"><span class="hash">#</span> 경력 <span class="mono" style="font-size:11px;font-weight:500;color:#646f7b;">총 7년 5개월</span><span class="ln"></span></h2>
@@ -998,7 +1078,7 @@
 
 <div id="lightbox" style="position:fixed;inset:0;z-index:100;display:none;flex-direction:column;background:rgba(5,8,11,.9);backdrop-filter:blur(6px);">
   <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px;flex:0 0 auto;">
-    <span class="mono" style="font-size:12.5px;color:#aab6c4;"><span style="color:#34d399;">froky-vape</span> · 관리자 대시보드 — 상품 326개 운영 중</span>
+    <span class="mono" style="font-size:12.5px;color:#aab6c4;"><span style="color:#60a5fa;">froky-vape</span> · 관리자 대시보드 — 상품 326개 운영 중</span>
     <div style="display:flex;align-items:center;gap:8px;">
       <button type="button" id="lbZoomOut" aria-label="축소" style="display:grid;place-items:center;width:34px;height:34px;border-radius:8px;border:1px solid #2a3542;background:#11161d;color:#e7eef6;cursor:pointer;font-size:20px;line-height:1;">−</button>
       <span id="lbZoomLabel" class="mono" style="min-width:48px;text-align:center;font-size:12.5px;color:#aab6c4;">100%</span>
@@ -1015,7 +1095,7 @@
   document.documentElement.classList.add('js');
   // 테마 전환 (localStorage 저장)
   var root = document.documentElement;
-  try { root.setAttribute('data-theme', localStorage.getItem('mg_theme') || 'dark'); } catch (e) {}
+  try { root.setAttribute('data-theme', localStorage.getItem('mg_theme') || 'light'); } catch (e) {}
   document.getElementById('theme').addEventListener('click', function () {
     var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
