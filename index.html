@@ -519,9 +519,13 @@
   .rsm-h .ln{flex:1;height:1px;background:#e1e7ee;}
   .rsm-h .hash{color:#2563eb;}
   .rsm-row{display:grid;grid-template-columns:128px 1fr;gap:14px;margin-bottom:9px;font-size:13px;line-height:1.5;}
+  .rsm-sheet .mono{font-family:'Pretendard',sans-serif;}
   .rsm-row .dt{font-family:'JetBrains Mono','Pretendard',monospace;font-size:11px;color:#4f5b68;}
   @media print{
+    html,body{background:#fff !important;}
     body>*:not(#resume-modal){display:none !important;}
+    .rsm-row{break-inside:avoid;}
+    .rsm-h{break-after:avoid;}
     #resume-modal{position:static;display:block !important;padding:0;overflow:visible;background:#fff;backdrop-filter:none;}
     .rsm-bar{display:none !important;}
     .rsm-sheet{max-width:none;margin:0;padding:14mm 16mm;border-radius:0;box-shadow:none;}
