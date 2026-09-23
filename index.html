@@ -5,7 +5,7 @@
 <meta name="theme-color" content="#fafafa">
 <meta name="color-scheme" content="light dark">
 <title>김민균 — AI 활용 풀스택 개발자</title>
-<meta name="description" content="김민균 포트폴리오. AI 활용 풀스택 개발자. AI Visibility Check(원티드 AI Championship 2026 출품), FROKY VAPE, B.A.I.S 야구 AI 해설, Jarvis Lite Pro 등 실서비스·AI 프로젝트. Python, Next.js, FastAPI, Claude API.">
+<meta name="description" content="김민균 포트폴리오. AI 활용 풀스택 개발자. AI Visibility Check(원티드 AI Championship 2026 출품), FROKY VAPE, 꿈몽가(꿈 웹툰 앱), B.A.I.S 야구 AI 해설, Jarvis Lite Pro 등 실서비스·AI 프로젝트. Python, Next.js, FastAPI, Claude API.">
 <meta name="author" content="김민균">
 <meta property="og:title" content="김민균 — AI 활용 풀스택 개발자">
 <meta property="og:description" content="아이디어를 실제 운영되는 제품으로 빠르게 만들어 배포하는 풀스택 개발자.">
@@ -616,7 +616,7 @@
     <dl class="stats reveal stagger">
       <div><dt>운영 중인 실서비스</dt><dd>326<small>개 상품</small></dd><dd class="note">FROKY VAPE 매장 메뉴</dd></div>
       <div><dt>AI 개발 대회</dt><dd>2<small>회 출전</small></dd><dd class="note">원티드 · 코리아IT아카데미</dd></div>
-      <div><dt>대표 프로젝트</dt><dd>10<small>개</small></dd><dd class="note">그 밖의 프로젝트 16개</dd></div>
+      <div><dt>대표 프로젝트</dt><dd>11<small>개</small></dd><dd class="note">그 밖의 프로젝트 16개</dd></div>
       <div><dt>현장 실무 경력</dt><dd>7<small>년+</small></dd><dd class="note">보안 · 매장 운영</dd></div>
     </dl>
   </section>
@@ -709,10 +709,31 @@
         </div>
       </article>
 
-      <article class="proj reveal" id="p-bais">
-        <div class="proj-media is-cover"><div class="cover" aria-hidden="true"><span class="cover-no mono">03</span><span class="cover-name">B.A.I.S — 야구 AI 해설</span><span class="cover-stack mono">Django · FastAPI · kanana sLLM · QLoRA</span></div></div>
+      <article class="proj reveal" id="p-kkm">
+        <div class="proj-media"><img src="assets/proj-kkm.webp" width="1200" height="750" alt="꿈몽가 앱 화면 — 첫 화면, 꿈 만화, 꿈풀이" loading="lazy" decoding="async"></div>
         <div class="proj-body">
-          <div class="proj-meta"><span class="idx mono">03</span><span class="pill mono">팀 최종 프로젝트 · 6인</span></div>
+          <div class="proj-meta"><span class="idx mono">03</span><span class="pill mono">모바일 앱 · 출시 준비 중</span><span class="pill mono" style="color:var(--accent);border-color:color-mix(in srgb,var(--accent) 30%,transparent);">비공개</span></div>
+          <h3>꿈몽가 — 꿈을 웹툰으로</h3>
+          <p class="lead">손가락으로 그리고 글로 적은 꿈을 60컷 웹툰과 꿈풀이로 돌려주는 모바일 앱. 밤에는 ‘담월’, 낮에는 ‘여명’이 안내합니다.</p>
+          <p class="result">꿈마다 <strong>새 그림 6~9장으로 60컷 웹툰</strong>을 만드는 생성 구조 설계 · 안드로이드 빌드 완료</p>
+          <div class="tags mono"><span class="tag">HTML/CSS/JS</span><span class="tag">Capacitor 8</span><span class="tag">Android</span><span class="tag">FastAPI</span><span class="tag">Claude API</span><span class="tag">이미지 생성 AI</span></div>
+          <details class="proj-more"><summary>기획 의도와 구현 내용 보기</summary><div class="proj-more-body"><div class="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"></path></svg><div><span class="pk">기획 의도 · WHY</span><span class="pt">꿈은 깨고 나면 금방 흐려지고, 해몽 사이트는 글자뿐입니다. — <b>“내 꿈을 그대로 그려서 다시 보여 준다”</b>를 핵심 가치로, 꿈을 그림으로 기록하고 만화로 다시 보는 경험을 기획.</span></div></div><div class="did">
+          <div class="dl mono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"></path></svg>내가 직접 구현한 것</div>
+          <ul>
+            <li>Claude 도구 호출로 <b>50~60컷 대본(JSON)</b>을 만들고 이미지 AI로 배경·핵심 장면을 병렬 생성 — 한 장이 실패해도 그 컷만 빼고 만화를 완성하는 서버</li>
+            <li>한 장을 멀리·가까이·아주 가까이로 잘라 쓰는 <b>크롭 연출</b>로 그림 컷 비율 35% → 78% — 생성 비용이 컷 수에 비례하지 않게</li>
+            <li><b>캐릭터는 고정 그림, 꿈 장면만 매번 새로</b> — 캐릭터 일관성과 개인화를 함께. 밤·낮 테마에 따라 안내자가 바뀌는 2인 캐릭터</li>
+            <li>사용자가 그린 선을 잘라 만화 컷과 AI 그림의 밑그림으로 쓰는 <b>그리기 → 만화</b> 흐름</li>
+            <li>웹 화면을 그대로 <b>Capacitor</b>로 감싸 안드로이드 APK 빌드 — 앱스토어·플레이스토어 출시 준비</li>
+          </ul>
+        </div><p class="role"><b>역할</b>기획 · 캐릭터 기획 · UI 디자인 · 프론트엔드 · 백엔드 <span style="color:var(--muted)">단독 · 진행 중</span></p></div></details>
+        </div>
+      </article>
+
+      <article class="proj reveal" id="p-bais">
+        <div class="proj-media is-cover"><div class="cover" aria-hidden="true"><span class="cover-no mono">04</span><span class="cover-name">B.A.I.S — 야구 AI 해설</span><span class="cover-stack mono">Django · FastAPI · kanana sLLM · QLoRA</span></div></div>
+        <div class="proj-body">
+          <div class="proj-meta"><span class="idx mono">04</span><span class="pill mono">팀 최종 프로젝트 · 6인</span></div>
           <h3>B.A.I.S — 야구 AI 해설</h3>
           <p class="lead">“편파 해설 없이, 야구를 더 쉽게” — AI 해설위원이 야구 입문 장벽을 낮추는 웹 서비스. (SK네트웍스 Family AI 캠프 최종 프로젝트 · 2025.10~12)</p>
           <p class="result">6인 팀에서 <strong>백엔드·AI 파이프라인</strong>을 담당해 서비스 품질을 끌어올림</p>
@@ -730,9 +751,9 @@
       </article>
 
       <article class="proj reveal" id="p-jarvis">
-        <div class="proj-media is-cover"><div class="cover" aria-hidden="true"><span class="cover-no mono">04</span><span class="cover-name">Jarvis Lite Pro</span><span class="cover-stack mono">FastAPI · Flutter · Docker</span></div></div>
+        <div class="proj-media is-cover"><div class="cover" aria-hidden="true"><span class="cover-no mono">05</span><span class="cover-name">Jarvis Lite Pro</span><span class="cover-stack mono">FastAPI · Flutter · Docker</span></div></div>
         <div class="proj-body">
-          <div class="proj-meta"><span class="idx mono">04</span><span class="pill mono">멀티디바이스 AI 비서</span><span class="pill mono" style="color:var(--accent);border-color:color-mix(in srgb,var(--accent) 30%,transparent);">비공개</span></div>
+          <div class="proj-meta"><span class="idx mono">05</span><span class="pill mono">멀티디바이스 AI 비서</span><span class="pill mono" style="color:var(--accent);border-color:color-mix(in srgb,var(--accent) 30%,transparent);">비공개</span></div>
           <h3>Jarvis Lite Pro</h3>
           <p class="lead">데스크톱·노트북·안드로이드를 넘나드는 개인 AI 비서.</p>
           <p class="result">3대 기기에서 동작하는 <strong>엔드투엔드 AI 비서</strong> · 보안 설계까지 단독 구현</p>
@@ -749,9 +770,9 @@
       </article>
 
       <article class="proj reveal" id="p-edulink">
-        <div class="proj-media is-cover"><div class="cover" aria-hidden="true"><span class="cover-no mono">05</span><span class="cover-name">EduLink AI</span><span class="cover-stack mono">Next.js 14 · FastAPI · Claude API</span></div></div>
+        <div class="proj-media is-cover"><div class="cover" aria-hidden="true"><span class="cover-no mono">06</span><span class="cover-name">EduLink AI</span><span class="cover-stack mono">Next.js 14 · FastAPI · Claude API</span></div></div>
         <div class="proj-body">
-          <div class="proj-meta"><span class="idx mono">05</span><span class="pill">코리아IT아카데미 바이브코딩 대회 · 4인 팀 · 7일</span></div>
+          <div class="proj-meta"><span class="idx mono">06</span><span class="pill">코리아IT아카데미 바이브코딩 대회 · 4인 팀 · 7일</span></div>
           <h3>EduLink AI</h3>
           <p class="lead">교사의 업무를 자동화하고 학생의 학습을 개인화하는 AI 교육 플랫폼. (Code Horizon Team · 2026.04 코리아IT아카데미 강남 바이브코딩 대회)</p>
           <p class="result">교사·학생·관리자 <strong>3개 역할 AI 교육 플랫폼</strong> 완성 · Vercel·Supabase 실제 배포</p>
@@ -775,9 +796,9 @@
       </article>
 
       <article class="proj reveal" id="p-detective">
-        <div class="proj-media is-cover"><div class="cover" aria-hidden="true"><span class="cover-no mono">06</span><span class="cover-name">서울 시간여행 탐정</span><span class="cover-stack mono">Python · Streamlit · GPT-4o</span></div></div>
+        <div class="proj-media is-cover"><div class="cover" aria-hidden="true"><span class="cover-no mono">07</span><span class="cover-name">서울 시간여행 탐정</span><span class="cover-stack mono">Python · Streamlit · GPT-4o</span></div></div>
         <div class="proj-body">
-          <div class="proj-meta"><span class="idx mono">06</span><span class="pill mono">AI 절차적 생성 게임</span></div>
+          <div class="proj-meta"><span class="idx mono">07</span><span class="pill mono">AI 절차적 생성 게임</span></div>
           <h3>서울 시간여행 탐정</h3>
           <p class="lead">1950년대 서울 배경의 추리 게임 — 매 플레이마다 새 사건이 생성되는 무한 리플레이.</p>
           <div class="tags mono"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">GPT-4o</span><span class="tag">DALL·E 3</span></div>
@@ -793,9 +814,9 @@
       </article>
 
       <article class="proj reveal" id="p-shop">
-        <div class="proj-media is-cover"><div class="cover" aria-hidden="true"><span class="cover-no mono">07</span><span class="cover-name">쇼핑몰 통합 관리 대시보드</span><span class="cover-stack mono">Python · Node.js · 카페24 OAuth</span></div></div>
+        <div class="proj-media is-cover"><div class="cover" aria-hidden="true"><span class="cover-no mono">08</span><span class="cover-name">쇼핑몰 통합 관리 대시보드</span><span class="cover-stack mono">Python · Node.js · 카페24 OAuth</span></div></div>
         <div class="proj-body">
-          <div class="proj-meta"><span class="idx mono">07</span><span class="pill mono">실무 · 운영 도구</span><span class="pill mono" style="color:var(--accent);border-color:color-mix(in srgb,var(--accent) 30%,transparent);">비공개</span></div>
+          <div class="proj-meta"><span class="idx mono">08</span><span class="pill mono">실무 · 운영 도구</span><span class="pill mono" style="color:var(--accent);border-color:color-mix(in srgb,var(--accent) 30%,transparent);">비공개</span></div>
           <h3>쇼핑몰 통합 관리 대시보드</h3>
           <p class="lead">카페24 기반 쇼핑몰의 상품·주문·CS·판매진단을 한 곳에서 처리하는 운영 대시보드.</p>
           <p class="result">상품·주문·CS·멀티마켓 등록을 하나로 통합, <strong>운영 업무를 자동화</strong>한 실무 도구</p>
@@ -812,9 +833,9 @@
       </article>
 
       <article class="proj reveal" id="p-hub">
-        <div class="proj-media is-cover"><div class="cover" aria-hidden="true"><span class="cover-no mono">08</span><span class="cover-name">종합 AI 대화창</span><span class="cover-stack mono">Node.js · Express · Claude CLI</span></div></div>
+        <div class="proj-media is-cover"><div class="cover" aria-hidden="true"><span class="cover-no mono">09</span><span class="cover-name">종합 AI 대화창</span><span class="cover-stack mono">Node.js · Express · Claude CLI</span></div></div>
         <div class="proj-body">
-          <div class="proj-meta"><span class="idx mono">08</span><span class="pill mono">멀티에이전트 오케스트레이션</span><span class="pill mono" style="color:var(--accent);border-color:color-mix(in srgb,var(--accent) 30%,transparent);">비공개</span></div>
+          <div class="proj-meta"><span class="idx mono">09</span><span class="pill mono">멀티에이전트 오케스트레이션</span><span class="pill mono" style="color:var(--accent);border-color:color-mix(in srgb,var(--accent) 30%,transparent);">비공개</span></div>
           <h3>종합 AI 대화창 <span style="font-weight:500;color:var(--muted);font-size:.7em;">Multi-Agent AI Hub</span></h3>
           <p class="lead">Claude·Codex·Hermes·Ollama 4개 AI를 한 화면에서 묶어 쓰는 로컬 채팅 프로그램 — 외부 서버 없이 PC에서만 동작.</p>
           <p class="result">4개 AI를 병렬·협업으로 묶은 <strong>멀티에이전트 오케스트레이션 허브</strong></p>
@@ -832,9 +853,9 @@
       </article>
 
       <article class="proj reveal" id="p-invest">
-        <div class="proj-media is-cover"><div class="cover" aria-hidden="true"><span class="cover-no mono">09</span><span class="cover-name">모의투자 랩</span><span class="cover-stack mono">TypeScript · Vercel Functions · Yahoo Finance</span></div></div>
+        <div class="proj-media is-cover"><div class="cover" aria-hidden="true"><span class="cover-no mono">10</span><span class="cover-name">모의투자 랩</span><span class="cover-stack mono">TypeScript · Vercel Functions · Yahoo Finance</span></div></div>
         <div class="proj-body">
-          <div class="proj-meta"><span class="idx mono">09</span><span class="pill mono">전략 검증 · 백테스트</span></div>
+          <div class="proj-meta"><span class="idx mono">10</span><span class="pill mono">전략 검증 · 백테스트</span></div>
           <h3>모의투자 랩</h3>
           <p class="lead">실제 시세로 연습하는 한국·미국 주식 모의투자 대시보드. 교육용이며 실거래 권유가 아닙니다.</p>
           <p class="result">비용까지 반영해 국내 <strong>+54%p</strong>·국외 <strong>+19%p</strong>로 기준선을 이긴 전략 · 한계도 함께 명시</p>
@@ -853,9 +874,9 @@
       </article>
 
       <article class="proj reveal" id="p-travel">
-        <div class="proj-media is-cover"><div class="cover" aria-hidden="true"><span class="cover-no mono">10</span><span class="cover-name">여행 준비 허브</span><span class="cover-stack mono">TypeScript · Vercel Functions · OpenStreetMap</span></div></div>
+        <div class="proj-media is-cover"><div class="cover" aria-hidden="true"><span class="cover-no mono">11</span><span class="cover-name">여행 준비 허브</span><span class="cover-stack mono">TypeScript · Vercel Functions · OpenStreetMap</span></div></div>
         <div class="proj-body">
-          <div class="proj-meta"><span class="idx mono">10</span><span class="pill mono">API 키 없이 동작</span></div>
+          <div class="proj-meta"><span class="idx mono">11</span><span class="pill mono">API 키 없이 동작</span></div>
           <h3>여행 준비 허브</h3>
           <p class="lead">목적지와 날짜를 정하면 명소·맛집·날씨·공휴일·항공·숭소·번역을 한 화면에서 보는 여행 준비 웹앱.</p>
           <p class="result"><strong>유료 키 0개로 전 기능이 동작</strong>하는 여행 준비 웹앱 · 모바일 PWA 대응</p>
@@ -989,7 +1010,7 @@
         </div>
         <h3 style="font-size:16px;font-weight:700;margin-bottom:8px;letter-spacing:-.01em;">B.A.I.S — 야구 AI 해설</h3>
         <p style="font-size:13.5px;line-height:1.6;color:var(--text2);margin-bottom:11px;">여섯 단계에서 쌓은 것 — 데이터 수집, 모델 비교, RAG, 배포 — 을 전부 합친 최종 결과물. sLLM·VLM·RAG를 묶은 멀티모달 파이프라인을 백엔드에서 담당했습니다.</p>
-        <a href="#p-bais" class="mono" style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--accent);text-decoration:none;">위 대표 프로젝트 03에서 자세히 보기 <span>↑</span></a>
+        <a href="#p-bais" class="mono" style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--accent);text-decoration:none;">위 대표 프로젝트 04에서 자세히 보기 <span>↑</span></a>
       </div>
 
     </div>
@@ -1116,6 +1137,7 @@
     <div style="display:flex;flex-direction:column;gap:9px;">
       <div class="rsm-row"><div><span style="font-weight:800;">AI Visibility Check</span><div class="mono" style="font-size:11px;color:#2563eb;">단독 · 대회 출품</div></div><div style="color:#23303c;">쇼핑몰 주소로 AI·고객용 정보를 점검하는 진단 서비스(React·Cloudflare Worker·D1·Gemini). 진단의 약 70%를 규칙 기반으로 판정해 AI 없이도 결과 제공. <strong style="color:#13181f;">자동 테스트 56개 · 운영 점검 25개 통과, 무료 한도 내 운영.</strong></div></div>
       <div class="rsm-row"><div><span style="font-weight:800;">FROKY VAPE</span><div class="mono" style="font-size:11px;color:#2563eb;">단독 · 운영 중</div></div><div style="color:#23303c;">단일 HTML 풀스택 커머스 웹앱(장바구니·검색·결제). <strong style="color:#13181f;">기획~배포 단독 완주, 실서비스 운영 중.</strong> Cloudflare Worker 보안 백엔드·상품 326개 관리.</div></div>
+      <div class="rsm-row"><div><span style="font-weight:800;">꿈몽가</span><div class="mono" style="font-size:11px;color:#4f5b68;">단독 · 출시 준비 중</div></div><div style="color:#23303c;">그림·글로 적은 꿈을 60컷 웹툰과 꿈풀이로 돌려주는 모바일 앱(Capacitor·FastAPI·Claude API·이미지 생성 AI). 캐릭터는 고정하고 꿈 장면만 새로 그려 <strong style="color:#13181f;">꿈 하나당 새 그림 6~9장으로 60컷</strong> 구성, 안드로이드 빌드 완료.</div></div>
       <div class="rsm-row"><div><span style="font-weight:800;">B.A.I.S</span><div class="mono" style="font-size:11px;color:#4f5b68;">6인 팀</div></div><div style="color:#23303c;">야구 AI 해설 — sLLM·VLM·RAG 멀티모달. 백엔드·AI 연동·배포. <strong style="color:#13181f;">처리량 4→15/h, 할루시네이션 90%+ 개선.</strong></div></div>
       <div class="rsm-row"><div><span style="font-weight:800;">EduLink AI</span><div class="mono" style="font-size:11px;color:#4f5b68;">4인 팀 · 바이브코딩 대회</div></div><div style="color:#23303c;">AI 교육 플랫폼(Next.js·FastAPI·Claude API). 문제 자동 생성·채점, AI 진로 상담(Qwen2.5). <strong style="color:#13181f;">교사·학생·관리자 3개 역할 플랫폼 완성 · Vercel·Supabase 배포.</strong></div></div>
       <div class="rsm-row"><div><span style="font-weight:800;">Jarvis Lite Pro</span><div class="mono" style="font-size:11px;color:#4f5b68;">단독 · 비공개</div></div><div style="color:#23303c;">멀티디바이스 AI 비서(FastAPI·Flutter·Tailscale). <strong style="color:#13181f;">토큰 인증·화이트리스트 보안 직접 설계.</strong></div></div>
